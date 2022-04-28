@@ -9,11 +9,12 @@ const paymentmethod = () => {
       </h1>
       <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto text-sm leading-7">
         <p>
-          Pay with a credit or debit card via PayPal (You don't need to have a
-          PayPal account). Press to pay via Paypal, then choose to "Create an
-          Account" and you will get a window where you can eneter your card
-          details and pay an order. If you need a help or instructions 'how to
-          pay', feel free to contact us.
+          Pay with a credit or debit card via PayPal
+          {"(You don't need to have a PayPal account)"}. Press to pay via
+          Paypal, then choose to
+          {`"Create an Account"`} and you will get a window where you can eneter
+          your card details and pay an order. If you need a help or instructions
+          {`'how to pay'`}, feel free to contact us.
         </p>
         <br />
         <p>

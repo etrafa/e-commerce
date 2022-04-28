@@ -22,7 +22,7 @@ const returnpolicy = () => {
         <br />
         <p>
           Considering the transportation time of the return takes more than 1
-          month also the expensive shipping fee, what's more We want to
+          month also the expensive shipping fee, {"what's"} more We want to
           establish a long-term cooperative relationship with you, so here is
           our win-win solution.
         </p>
