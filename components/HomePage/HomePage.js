@@ -1,12 +1,11 @@
 //components
-import Banner from "../Banner/Banner";
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
+
+import TeamStores from "../Banner/TeamStores";
 
 const HomePage = () => {
   return (
     <div>
-      <Banner />
+      <TeamStores />
     </div>
   );
 };

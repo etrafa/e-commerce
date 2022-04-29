@@ -1,8 +1,8 @@
 //components
-import Leauge from "../components/Leauges/Leauge";
+import Bundesliga from "../components/Leauges/Bundesliga";
 
 const bundesliga = () => {
-  return <Leauge />;
+  return <Bundesliga />;
 };
 
 export default bundesliga;
