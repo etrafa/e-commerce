@@ -10,26 +10,29 @@ import LigueOne from "./teamstores-asset/ligue1.png";
 import Image from "next/image";
 import Link from "next/link";
 
+//styling
+import styles from "./Banner.module.css";
+
 const TeamStores = () => {
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-8/12 lg:mx-auto gap-4">
       <Link href="national-teams">
-        <Image src={NationalTeam} />
+        <Image className={styles.zoomAnimation} src={NationalTeam} />
       </Link>
       <Link href="premier-leauge">
-        <Image src={PremierLeauge} />
+        <Image className={styles.zoomAnimation} src={PremierLeauge} />
       </Link>
       <Link href="bundesliga">
-        <Image src={Bundesliga} />
+        <Image className={styles.zoomAnimation} src={Bundesliga} />
       </Link>
       <Link href="seriea-leauge">
-        <Image src={SeriA} />
+        <Image className={styles.zoomAnimation} src={SeriA} />
       </Link>
       <Link href="la-liga">
-        <Image src={LaLiga} />
+        <Image className={styles.zoomAnimation} src={LaLiga} />
       </Link>
       <Link href="ligue-one">
-        <Image src={LigueOne} />
+        <Image className={styles.zoomAnimation} src={LigueOne} />
       </Link>
     </div>
   );

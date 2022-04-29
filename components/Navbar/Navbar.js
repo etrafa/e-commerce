@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-row items-center justify-between">
-      <div></div>
+    <nav className="flex flex-row items-center justify-between mx-2">
+      <div className=""></div>
       <div>
         <Link href="/">
           <Image
@@ -19,7 +19,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="h-10 w-10 rounded bg-border relative mr-2 ">
+      <div className="h-10 w-10 rounded bg-border relative lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-6 w-6 text-white cursor-pointer"

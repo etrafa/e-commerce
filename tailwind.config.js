@@ -9,6 +9,7 @@ module.exports = {
         footer: "#222222",
         border: "#444444",
         customRed: "#FF7362",
+        hoverText: "#fea500",
       },
     },
   },
