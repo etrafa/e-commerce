@@ -2,12 +2,21 @@
 import Logo from "../../public/logo.png";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center">
       <div></div>
-      <Image src={Logo} alt="company logo" width={60} height={60} />
+      <Link href="/">
+        <Image
+          className="cursor-pointer"
+          src={Logo}
+          alt="company logo"
+          width={60}
+          height={60}
+        />
+      </Link>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
