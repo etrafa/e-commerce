@@ -13,8 +13,6 @@ export const getDocsHook = (url) => {
     fetchData();
   }, []);
 
-  console.log(dbData);
-
   return { dbData };
 };
 

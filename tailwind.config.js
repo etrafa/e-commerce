@@ -11,6 +11,7 @@ module.exports = {
         customRed: "#FF7362",
         hoverText: "#fea500",
       },
+      display: ["group-hover"],
     },
   },
 
