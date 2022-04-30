@@ -1,0 +1,14 @@
+/* hamburger menu animation */
+
+.hamburgermenu_animation {
+  animation: hamburgerMenuEffect 0.8s ease;
+}
+
+@keyframes hamburgerMenuEffect {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 0;
+  }
+}

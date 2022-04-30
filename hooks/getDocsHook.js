@@ -1,4 +1,4 @@
-import { getDocs } from "firebase/firestore";
+import { doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 export const getDocsHook = (url) => {
@@ -7,7 +7,9 @@ export const getDocsHook = (url) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await getDocs(url);
-      const data = res.docs.map((doc) => doc.data());
+      const data = res.docs.map((items) => {
+        return { ...items.data(), id: items.id };
+      });
       setDbData(data);
     };
     fetchData();
@@ -16,17 +18,14 @@ export const getDocsHook = (url) => {
   return { dbData };
 };
 
-// export const getDocsHook = async (url) => {
-//   const res = await getDocs(url);
-//   const data = res.docs.map((doc) => doc.data());
-//   console.log(data);
-// };
-
 // useEffect(() => {
-//     const getData = async () => {
-//       const res = await getDocs(userCollectionRef);
-//       const data = res.docs.map((item) => item.data());
-//       console.log(data);
-//     };
-//     getData();
-//   }, []);
+//   const fetchData = async () => {
+//     const res = await getDocs(url);
+//     const data = res.docs.map((doc) => doc.data());
+//     setDbData(data);
+//   };
+//   fetchData();
+// }, []);
+
+// return { dbData };
+// };

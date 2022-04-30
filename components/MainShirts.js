@@ -22,7 +22,7 @@ const MainShirts = ({ frontLarge, tshirtName, price }) => {
       <div className="mb-6">
         {currency === "USD" && <span className="text-red-400">${price}</span>}
         {currency === "EUR" && (
-          <span className="text-orange-400">{`${price * 0.95}0`}€</span>
+          <span className="text-orange-400">{price * 0.95}€</span>
         )}
         {currency === "GBP" && (
           <span className=" text-lime-500">{price * 0.8}£</span>
