@@ -3,7 +3,10 @@ const SearchButton = () => {
     <div className="flex items-center group cursor-pointer relative">
       {/* searchbar */}
       <div className="hidden group-hover:block absolute  right-0">
-        <input className="w-36 h-8 bg-red-300" type="text" />
+        <input
+          className="w-60 h-10 border border-searchBar  rounded-lg"
+          type="text"
+        />
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"

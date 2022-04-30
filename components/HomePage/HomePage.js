@@ -5,8 +5,8 @@ import BestSellers from "../Products/BestSellers";
 const HomePage = () => {
   return (
     <div>
-      {/* <TeamStores />
-      <BestSellers /> */}
+      <TeamStores />
+      <BestSellers />
     </div>
   );
 };

@@ -1,6 +1,10 @@
-import React from "react";
+import { CurrencyContext } from "../../../Context/CurrencyContext";
+import { useContext } from "react";
 
 const Currency = () => {
+  //currency state
+  const { currency, setCurrency } = useContext(CurrencyContext);
+
   return (
     <div className="flex items-center cursor-pointer relative group">
       <svg
@@ -17,7 +21,7 @@ const Currency = () => {
           d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
         />
       </svg>
-      <p>USD</p>
+      <p>{currency}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"
@@ -34,11 +38,35 @@ const Currency = () => {
       <div className=" w-24 absolute top-6 bg-white text-border hidden group-hover:block z-50">
         <ul className="mt-2 text-border">
           <li className="border-2 border-hoverText"></li>
-          <li className="h-8 mt-1">USD</li>
+          <li
+            onClick={() => {
+              setCurrency("USD");
+              console.log(currency);
+            }}
+            className="h-8 mt-1 hover:text-hoverText"
+          >
+            USD
+          </li>
           <hr />
-          <li className="h-8 mt-2">EUR</li>
+          <li
+            onClick={() => {
+              setCurrency("EUR");
+              console.log(currency);
+            }}
+            className="h-8 mt-2 hover:text-hoverText"
+          >
+            EUR
+          </li>
           <hr />
-          <li className="h-8 mt-2">GBP</li>
+          <li
+            onClick={() => {
+              setCurrency("GBP");
+              console.log(currency);
+            }}
+            className="h-8 mt-2 hover:text-hoverText"
+          >
+            GBP
+          </li>
           <hr />
         </ul>
       </div>

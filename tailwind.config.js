@@ -10,6 +10,7 @@ module.exports = {
         border: "#444444",
         customRed: "#FF7362",
         hoverText: "#fea500",
+        searchBar: "#777",
       },
       display: ["group-hover"],
     },
