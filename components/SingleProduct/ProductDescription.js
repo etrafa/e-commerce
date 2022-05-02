@@ -35,7 +35,7 @@ const ProductDescription = ({ description, frontLarge, backLarge }) => {
       </p>
       <div className="text-center mt-12">
         <Image src={frontLarge} width={350} height={350} />
-        {backLarge && <Image src={backLarge} width={60} height={60} />}
+        {backLarge && <Image src={backLarge} width={350} height={350} />}
       </div>
     </div>
   );
