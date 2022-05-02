@@ -73,37 +73,37 @@ const Navbar = () => {
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="premier-leauge">
+          <Link href="/premier-leauge">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               PREMIER LEAUGE
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="bundesliga">
+          <Link href="/bundesliga">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               BUNDESLIGA
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="seriea-leauge">
+          <Link href="/seriea-leauge">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               SERIE A
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="la-liga">
+          <Link href="/la-liga">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               LA LIGA
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="ligue-one">
+          <Link href="/ligue-one">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               LIGUE 1
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="other-clubs">
+          <Link href="/other-clubs">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               OTHER CLUBS
             </li>
@@ -124,32 +124,32 @@ const Navbar = () => {
             NATIONAL TEAM
           </p>
         </Link>
-        <Link href="premier-leauge">
+        <Link href="/premier-leauge">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             PREMIER LEAUGE
           </p>
         </Link>
-        <Link href="bundesliga">
+        <Link href="/bundesliga">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             BUNDESLIGA
           </p>
         </Link>
-        <Link href="seriea-leauge">
+        <Link href="/seriea-leauge">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             SERIE A
           </p>
         </Link>
-        <Link href="la-liga">
+        <Link href="/la-liga">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             LA LIGA
           </p>
         </Link>
-        <Link href="ligue-one">
+        <Link href="/ligue-one">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             LIGUE 1
           </p>
         </Link>
-        <Link href="other-clubs">
+        <Link href="/other-clubs">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             OTHER CLUBS
           </p>

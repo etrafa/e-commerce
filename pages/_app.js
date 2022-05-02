@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }) {
   const [showing, setShowing] = useState(false);
 
   /*Currency*/
-
   const [currency, setCurrency] = useState("USD");
 
   useEffect(() => {

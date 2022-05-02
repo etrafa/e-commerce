@@ -21,7 +21,7 @@ const Currency = () => {
           d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
         />
       </svg>
-      <p>{currency}</p>
+      <p className="pl-2">{currency}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"
@@ -41,7 +41,6 @@ const Currency = () => {
           <li
             onClick={() => {
               setCurrency("USD");
-              console.log(currency);
             }}
             className="h-8 mt-1 hover:text-hoverText"
           >
@@ -51,7 +50,6 @@ const Currency = () => {
           <li
             onClick={() => {
               setCurrency("EUR");
-              console.log(currency);
             }}
             className="h-8 mt-2 hover:text-hoverText"
           >
@@ -61,7 +59,6 @@ const Currency = () => {
           <li
             onClick={() => {
               setCurrency("GBP");
-              console.log(currency);
             }}
             className="h-8 mt-2 hover:text-hoverText"
           >

@@ -8,7 +8,7 @@ export const getDocsHook = (url) => {
     const fetchData = async () => {
       const res = await getDocs(url);
       const data = res.docs.map((items) => {
-        return { ...items.data(), id: items.id };
+        return { id: items.id, ...items.data() };
       });
       setDbData(data);
     };
@@ -17,15 +17,3 @@ export const getDocsHook = (url) => {
 
   return { dbData };
 };
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     const res = await getDocs(url);
-//     const data = res.docs.map((doc) => doc.data());
-//     setDbData(data);
-//   };
-//   fetchData();
-// }, []);
-
-// return { dbData };
-// };

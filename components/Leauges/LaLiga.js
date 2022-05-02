@@ -19,6 +19,7 @@ const LaLiga = () => {
               tshirtName={shirt.tshirtName}
               frontLarge={shirt.frontLarge}
               price={shirt.price}
+              id={shirt.id}
             />
           );
         })}
