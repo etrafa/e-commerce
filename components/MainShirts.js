@@ -3,15 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 //context api
-import { CurrencyContext } from "../Context/CurrencyContext";
 import { useContext } from "react";
+import { CurrencyContext } from "../Context/CurrencyContext";
 
-const MainShirts = ({ frontLarge, tshirtName, price, id }) => {
-  const { currency } = useContext(CurrencyContext);
+const MainShirts = ({ frontLarge, tshirtName, price, id, leauge }) => {
+  const { currency, setProductID, productLeuage, setProductLeauge } =
+    useContext(CurrencyContext);
 
   return (
     <Link href={"/products/" + id}>
-      <div className="text-center py-8">
+      <div
+        onClick={() => {
+          setProductID(id);
+          setProductLeauge(leauge);
+        }}
+        className="text-center py-8"
+      >
         <Image
           className="cursor-pointer"
           width={240}

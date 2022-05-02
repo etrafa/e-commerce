@@ -16,6 +16,10 @@ function MyApp({ Component, pageProps }) {
   /*Currency*/
   const [currency, setCurrency] = useState("USD");
 
+  //URL TRACKER
+  const [productID, setProductID] = useState("");
+  const [productLeuage, setProductLeauge] = useState("");
+
   useEffect(() => {
     setShowing(true);
   }, []);
@@ -26,7 +30,16 @@ function MyApp({ Component, pageProps }) {
     return <></>;
   } else {
     return (
-      <CurrencyContext.Provider value={{ currency, setCurrency }}>
+      <CurrencyContext.Provider
+        value={{
+          currency,
+          setCurrency,
+          productID,
+          setProductID,
+          productLeuage,
+          setProductLeauge,
+        }}
+      >
         <Layout>
           <Component {...pageProps} />
         </Layout>

@@ -2,6 +2,10 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 
+//useContext
+import { useContext } from "react";
+import { CurrencyContext } from "../../Context/CurrencyContext";
+
 //components
 import ProductDetails from "../../components/SingleProduct/ProductDetails";
 import ProductShipmentInformation from "../../components/SingleProduct/ProductShipmentInformation";
@@ -10,9 +14,10 @@ import ProductDescription from "../../components/SingleProduct/ProductDescriptio
 
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState(null);
+  const { productID, productLeuage } = useContext(CurrencyContext);
 
   useEffect(() => {
-    const docRef = doc(db, "premierleauge", "5o90G3cC5744Ii");
+    const docRef = doc(db, productLeuage, productID);
     const fetchSingleProduct = async () => {
       const response = await getDoc(docRef);
       console.log(response.data());

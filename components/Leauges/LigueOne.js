@@ -20,6 +20,7 @@ const LigueOne = () => {
               frontLarge={shirt.frontLarge}
               price={shirt.price}
               id={shirt.id}
+              leauge={shirt.leauge}
             />
           );
         })}

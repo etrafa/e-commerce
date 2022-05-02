@@ -7,7 +7,7 @@ import { getDocsHook } from "../../hooks/getDocsHook";
 import MainShirts from "../MainShirts";
 
 const SerieaLeauge = () => {
-  const userCollectionRef = collection(db, "seria");
+  const userCollectionRef = collection(db, "seriea");
   const { dbData } = getDocsHook(userCollectionRef);
 
   return (
@@ -20,6 +20,7 @@ const SerieaLeauge = () => {
               frontLarge={shirt.frontLarge}
               price={shirt.price}
               id={shirt.id}
+              leauge={shirt.leauge}
             />
           );
         })}
