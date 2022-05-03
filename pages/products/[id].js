@@ -42,7 +42,6 @@ const SingleProduct = () => {
               isStock={singleProduct.isStock}
               price={singleProduct.price}
             />
-            {/* <ProductUserEvents currency={singleProduct.currency} /> */}
           </div>
           <ProductDescription
             description={singleProduct.description}

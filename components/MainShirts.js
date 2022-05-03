@@ -25,7 +25,7 @@ const MainShirts = ({ frontLarge, tshirtName, price, id, leauge }) => {
           height={240}
           src={frontLarge}
         />
-        <span className="text-sm block text-border font-medium cursor-pointer">
+        <span className="text-sm block text-border font-medium cursor-pointer hover:text-hoverText">
           {tshirtName.slice(0, 30).toUpperCase()}
         </span>
         <hr className="w-10/12 mt-1" />

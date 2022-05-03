@@ -4,7 +4,7 @@ import ProductUserEvents from "./ProductUserEvents";
 
 const ProductShipmentInformation = ({ tshirtName, price, isStock }) => {
   return (
-    <div className="">
+    <div className="lg:ml-24">
       <ProductNameAndPrice
         tshirtName={tshirtName}
         price={price}

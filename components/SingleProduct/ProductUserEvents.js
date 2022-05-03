@@ -5,6 +5,9 @@ const ProductUserEvents = ({ currency }) => {
   //track currency
   const { currency } = useContext(CurrencyContext);
 
+  //ADD TO CART FUNCTION
+  const addToCart = () => {};
+
   return (
     <div>
       <form className="flex flex-col w-11/12  mx-auto mt-4 bg-neutral-100">

@@ -28,7 +28,7 @@ const ProductDetails = ({ frontSmall, backSmall, frontLarge, backLarge }) => {
           />
         </div>
         {backSmall && (
-          <div className="w-20  border text-center ml-4 cursor-pointer">
+          <div className="w-20 border text-center ml-4 cursor-pointer">
             <Image
               onClick={() => setPreviewImage(backLarge)}
               src={backLarge}

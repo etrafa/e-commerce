@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }) {
   //URL TRACKER
   const [productID, setProductID] = useState("");
   const [productLeuage, setProductLeauge] = useState("");
+  const [shoppingCartItems, setShoppingCartItems] = [{}];
 
   useEffect(() => {
     setShowing(true);

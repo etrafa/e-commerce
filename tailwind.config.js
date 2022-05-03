@@ -12,6 +12,7 @@ module.exports = {
         hoverText: "#fea500",
         searchBar: "#777",
         strongRed: "#ff0000",
+        tableGray: "#EFEFEF",
       },
       display: ["group-hover"],
     },
