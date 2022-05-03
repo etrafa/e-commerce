@@ -30,17 +30,20 @@ const SingleProduct = () => {
     <div>
       {singleProduct && (
         <div>
-          <ProductDetails
-            frontSmall={singleProduct.frontSmall}
-            backSmall={singleProduct.backSmall}
-            frontLarge={singleProduct.frontLarge}
-            backLarge={singleProduct.backLarge}
-            tshirtName={singleProduct.tshirtName}
-            isStock={singleProduct.isStock}
-            price={singleProduct.price}
-          />
-          <ProductShipmentInformation />
-          <ProductUserEvents />
+          <div className="lg:flex lg:mx-auto w-full justify-center lg:mt-6">
+            <ProductDetails
+              frontSmall={singleProduct.frontSmall}
+              backSmall={singleProduct.backSmall}
+              frontLarge={singleProduct.frontLarge}
+              backLarge={singleProduct.backLarge}
+            />
+            <ProductShipmentInformation
+              tshirtName={singleProduct.tshirtName}
+              isStock={singleProduct.isStock}
+              price={singleProduct.price}
+            />
+            {/* <ProductUserEvents currency={singleProduct.currency} /> */}
+          </div>
           <ProductDescription
             description={singleProduct.description}
             frontLarge={singleProduct.frontLarge}

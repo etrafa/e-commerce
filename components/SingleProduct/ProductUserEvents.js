@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
 
-const ProductUserEvents = () => {
+const ProductUserEvents = ({ currency }) => {
   //track currency
   const { currency } = useContext(CurrencyContext);
 

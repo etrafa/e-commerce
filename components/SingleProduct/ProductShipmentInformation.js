@@ -1,9 +1,19 @@
 import Link from "next/link";
+import ProductNameAndPrice from "./ProductNameAndPrice";
+import ProductUserEvents from "./ProductUserEvents";
 
-const ProductShipmentInformation = () => {
+const ProductShipmentInformation = ({ tshirtName, price, isStock }) => {
   return (
     <div className="">
-      <div className="flex mt-2 items-center">
+      <ProductNameAndPrice
+        tshirtName={tshirtName}
+        price={price}
+        isStock={isStock}
+      />
+      <hr className="w-11/12 mx-auto mt-2" />
+
+      {/* CUSTOMER REVIEWS */}
+      <div className="flex mt-2 items-center pt-2">
         <span className="text-border ml-4">CUSTOMER STARS:</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -130,6 +140,7 @@ const ProductShipmentInformation = () => {
           </span>
         </div>
       </div>
+      <ProductUserEvents />
     </div>
   );
 };

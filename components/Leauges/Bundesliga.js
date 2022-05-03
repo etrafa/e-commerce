@@ -6,9 +6,6 @@ import { collection, doc, getDoc } from "firebase/firestore";
 import { getDocsHook } from "../../hooks/getDocsHook";
 import MainShirts from "../MainShirts";
 
-//next
-import Link from "next/link";
-
 const Bundesliga = () => {
   const userCollectionRef = collection(db, "bundesliga");
   const { dbData } = getDocsHook(userCollectionRef);
