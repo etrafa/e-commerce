@@ -20,7 +20,6 @@ const SingleProduct = () => {
     const docRef = doc(db, productLeuage, productID);
     const fetchSingleProduct = async () => {
       const response = await getDoc(docRef);
-      console.log(response.data());
       setSingleProduct(response.data());
     };
 

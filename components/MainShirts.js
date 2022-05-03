@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { CurrencyContext } from "../Context/CurrencyContext";
 
 const MainShirts = ({ frontLarge, tshirtName, price, id, leauge }) => {
-  const { currency, setProductID, productLeuage, setProductLeauge } =
+  const { currency, setProductID, setProductLeauge } =
     useContext(CurrencyContext);
 
   return (
