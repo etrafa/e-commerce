@@ -1,12 +1,23 @@
 import { useContext } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
 
-const ProductUserEvents = ({ currency }) => {
+const ProductUserEvents = ({ tshirtName, price, frontSmall }) => {
   //track currency
-  const { currency } = useContext(CurrencyContext);
+  const { currency, shoppingCartItems, setShoppingCartItems } =
+    useContext(CurrencyContext);
 
   //ADD TO CART FUNCTION
-  const addToCart = () => {};
+  const addToCart = () => {
+    // setShoppingCartItems([
+    //   { tshirtName: tshirtName, price: price, frontSmall: frontSmall },
+    // ]);
+    setShoppingCartItems((prev) => [
+      ...prev,
+      { tshirtName: tshirtName, price: price, frontSmall: frontSmall },
+    ]);
+
+    console.log(shoppingCartItems);
+  };
 
   return (
     <div>
@@ -76,7 +87,10 @@ const ProductUserEvents = ({ currency }) => {
           * Required Fields
         </span>
       </form>
-      <div className="w-11/12 mt-6 mx-auto h-12 bg-black rounded-md text-center font-extrabold text-xl py-2 text-white">
+      <div
+        onClick={addToCart}
+        className="w-11/12 mt-6 mx-auto h-12 bg-black rounded-md text-center font-extrabold text-xl py-2 text-white cursor-pointer"
+      >
         <button>Add To Cart</button>
       </div>
     </div>

@@ -41,6 +41,7 @@ const SingleProduct = () => {
               tshirtName={singleProduct.tshirtName}
               isStock={singleProduct.isStock}
               price={singleProduct.price}
+              frontSmall={singleProduct.frontSmall}
             />
           </div>
           <ProductDescription

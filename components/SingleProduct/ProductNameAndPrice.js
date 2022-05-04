@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
 
-const ProductNameAndPrice = ({ tshirtName, price, isStock, currency }) => {
+const ProductNameAndPrice = ({ tshirtName, price, isStock }) => {
   //track currency
   const { currency } = useContext(CurrencyContext);
 

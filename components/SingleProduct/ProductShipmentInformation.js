@@ -2,7 +2,12 @@ import Link from "next/link";
 import ProductNameAndPrice from "./ProductNameAndPrice";
 import ProductUserEvents from "./ProductUserEvents";
 
-const ProductShipmentInformation = ({ tshirtName, price, isStock }) => {
+const ProductShipmentInformation = ({
+  tshirtName,
+  price,
+  isStock,
+  frontSmall,
+}) => {
   return (
     <div className="lg:ml-24">
       <ProductNameAndPrice
@@ -140,7 +145,11 @@ const ProductShipmentInformation = ({ tshirtName, price, isStock }) => {
           </span>
         </div>
       </div>
-      <ProductUserEvents />
+      <ProductUserEvents
+        tshirtName={tshirtName}
+        price={price}
+        frontSmall={frontSmall}
+      />
     </div>
   );
 };

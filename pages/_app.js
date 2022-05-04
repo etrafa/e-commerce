@@ -19,7 +19,9 @@ function MyApp({ Component, pageProps }) {
   //URL TRACKER
   const [productID, setProductID] = useState("");
   const [productLeuage, setProductLeauge] = useState("");
-  const [shoppingCartItems, setShoppingCartItems] = [{}];
+
+  // SHOPPING CART TRACKER
+  const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
   useEffect(() => {
     setShowing(true);
@@ -39,6 +41,8 @@ function MyApp({ Component, pageProps }) {
           setProductID,
           productLeuage,
           setProductLeauge,
+          shoppingCartItems,
+          setShoppingCartItems,
         }}
       >
         <Layout>
