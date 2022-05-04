@@ -23,6 +23,9 @@ function MyApp({ Component, pageProps }) {
   // SHOPPING CART TRACKER
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
+  //SIZE NOT CHOOSEN ERROR MODAL
+  const [isProductSizeEmpty, setIsProductSizeEmpty] = useState(false);
+
   useEffect(() => {
     setShowing(true);
   }, []);
@@ -43,6 +46,8 @@ function MyApp({ Component, pageProps }) {
           setProductLeauge,
           shoppingCartItems,
           setShoppingCartItems,
+          isProductSizeEmpty,
+          setIsProductSizeEmpty,
         }}
       >
         <Layout>

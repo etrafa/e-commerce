@@ -1,33 +1,54 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
+import SizeSelectionError from "../Errors/SizeSelectionError";
 
-const ProductUserEvents = ({ tshirtName, price, frontSmall }) => {
+const ProductUserEvents = ({ tshirtName, price, frontSmall, id }) => {
   //track currency
-  const { currency, shoppingCartItems, setShoppingCartItems } =
-    useContext(CurrencyContext);
+  const {
+    currency,
+    shoppingCartItems,
+    setShoppingCartItems,
+    isProductSizeEmpty,
+    setIsProductSizeEmpty,
+  } = useContext(CurrencyContext);
+
+  //PRODUCT SIZE OPTIONS
+  const [productSize, setProductSize] = useState("");
+  const [buttonText, setButtonText] = useState("Add to Cart");
 
   //ADD TO CART FUNCTION
   const addToCart = () => {
-    // setShoppingCartItems([
-    //   { tshirtName: tshirtName, price: price, frontSmall: frontSmall },
-    // ]);
-    setShoppingCartItems((prev) => [
-      ...prev,
-      { tshirtName: tshirtName, price: price, frontSmall: frontSmall },
-    ]);
-
-    console.log(shoppingCartItems);
+    // ? IF SIZE IS NOT SELECTED FORCE USER TO SELECT ONE //
+    if (productSize === "--Please Select--" || productSize === "") {
+      setIsProductSizeEmpty(true);
+      console.log("select size");
+    } else {
+      setIsProductSizeEmpty(false);
+      setButtonText("✔ Added");
+      setShoppingCartItems((prev) => [
+        ...prev,
+        {
+          id: id,
+          tshirtName: tshirtName,
+          price: price,
+          frontSmall: frontSmall,
+          productSize,
+        },
+      ]);
+    }
   };
 
   return (
-    <div>
+    <div className="relative">
       <form className="flex flex-col w-11/12  mx-auto mt-4 bg-neutral-100">
         <label className="flex flex-col ml-4 mt-4">
           <span className="text-red-400 text-sm">* Size</span>
-          <select className="border h-8 w-10/12 mt-1">
-            <option selected disabled>
-              --Please Select--
-            </option>
+          <select
+            value={productSize}
+            onChange={(e) => setProductSize(e.target.value)}
+            className="border h-8 w-10/12 mt-1 text-neutral-600"
+          >
+            <option selected>--Please Select--</option>
             <option>XS (34-36)</option>
             <option>S (36-38)</option>
             <option>M (38-40)</option>
@@ -45,7 +66,7 @@ const ProductUserEvents = ({ tshirtName, price, frontSmall }) => {
           )}
           {currency === "EUR" && (
             <p>
-              Name{" "}
+              Name
               <span className="text-black font-bold pl-2">{4 * 0.95}€</span>
             </p>
           )}
@@ -87,11 +108,16 @@ const ProductUserEvents = ({ tshirtName, price, frontSmall }) => {
           * Required Fields
         </span>
       </form>
+      {isProductSizeEmpty && (
+        <div className="absolute top-0 left-0 w-full">
+          <SizeSelectionError />
+        </div>
+      )}
       <div
         onClick={addToCart}
         className="w-11/12 mt-6 mx-auto h-12 bg-black rounded-md text-center font-extrabold text-xl py-2 text-white cursor-pointer"
       >
-        <button>Add To Cart</button>
+        <button>{buttonText}</button>
       </div>
     </div>
   );

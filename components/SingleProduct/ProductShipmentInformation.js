@@ -7,6 +7,7 @@ const ProductShipmentInformation = ({
   price,
   isStock,
   frontSmall,
+  id,
 }) => {
   return (
     <div className="lg:ml-24">
@@ -149,6 +150,7 @@ const ProductShipmentInformation = ({
         tshirtName={tshirtName}
         price={price}
         frontSmall={frontSmall}
+        id={id}
       />
     </div>
   );

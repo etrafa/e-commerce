@@ -9,7 +9,6 @@ import { CurrencyContext } from "../../Context/CurrencyContext";
 //components
 import ProductDetails from "../../components/SingleProduct/ProductDetails";
 import ProductShipmentInformation from "../../components/SingleProduct/ProductShipmentInformation";
-import ProductUserEvents from "../../components/SingleProduct/ProductUserEvents";
 import ProductDescription from "../../components/SingleProduct/ProductDescription";
 
 const SingleProduct = () => {
@@ -42,6 +41,7 @@ const SingleProduct = () => {
               isStock={singleProduct.isStock}
               price={singleProduct.price}
               frontSmall={singleProduct.frontSmall}
+              id={singleProduct.id || singleProduct.uid}
             />
           </div>
           <ProductDescription
