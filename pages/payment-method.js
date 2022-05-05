@@ -7,7 +7,7 @@ const paymentmethod = () => {
       <h1 className="text-border text-2xl font-bold text-center">
         PAYMENT METHOD
       </h1>
-      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto text-sm leading-7">
+      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12 text-sm leading-7">
         <p>
           Pay with a credit or debit card via PayPal
           {"(You don't need to have a PayPal account)"}. Press to pay via
@@ -32,7 +32,9 @@ const paymentmethod = () => {
           1) You can sign in to your PayPal account, or you can create a new one
           if you haven’t got one.
         </p>
-        <Image src={paypalMethod} alt="payment method" />
+        <div className="text-center">
+          <Image src={paypalMethod} alt="payment method" />
+        </div>
         <p>
           2) You can use the PayPal as you want according to the on-screen
           instructions.

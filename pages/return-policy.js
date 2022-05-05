@@ -6,7 +6,7 @@ const returnpolicy = () => {
       <h1 className="text-border text-2xl font-bold text-center">
         HOW DO I RETURN MY PRODUCT(S)?
       </h1>
-      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto text-sm leading-7">
+      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12 text-sm leading-7 ">
         <h4 className="font-bold">Order cancellation</h4>
         <p>
           All orders can be cancelled until they are shipped. If your order has

@@ -1,235 +1,36 @@
+import { useState } from "react";
+
+//components
+import KidJersey from "../components/SizeChart/KidJersey";
+import MenJersey from "../components/SizeChart/MenJersey";
+import MenTrainingSuit from "../components/SizeChart/MenTrainingSuit";
+import WomanJersey from "../components/SizeChart/WomanJersey";
+
 const sizechart = () => {
+  const [sizeChartOption, setSizeChartOption] = useState("");
+
   return (
-    <div className="">
+    <div className="w-full mt-6">
       <h1 className="text-border text-2xl font-bold text-center">Size Chart</h1>
-      <div className="mt-4">
-        <h4>Mens JERSEY</h4>
-        <table className="">
-          <tr>
-            <th>Size</th>
-            <th>Height(cm)</th>
-            <th>Weight(kg)</th>
-            <th>Clothing Lenght(cm)</th>
-            <th>Bust(cm)</th>
-          </tr>
-          <tr>
-            <td>S</td>
-            <td>160-165</td>
-            <td>60-65</td>
-            <td>71</td>
-            <td>102</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>165-170</td>
-            <td>60-70</td>
-            <td>73</td>
-            <td>106</td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>170-175</td>
-            <td>71-75</td>
-            <td>75</td>
-            <td>110</td>
-          </tr>
-          <tr>
-            <td>XL</td>
-            <td>175-180</td>
-            <td>76-80</td>
-            <td>77</td>
-            <td>114</td>
-          </tr>
-          <tr>
-            <td>2XL</td>
-            <td>180-185</td>
-            <td>81-87</td>
-            <td>81</td>
-            <td>120</td>
-          </tr>
-          <tr>
-            <td>3XL</td>
-            <td>185-190</td>
-            <td>88-95</td>
-            <td>83</td>
-            <td>124</td>
-          </tr>
-          <tr>
-            <td>4XL</td>
-            <td>190-195</td>
-            <td>96-103</td>
-            <td>85</td>
-            <td>128</td>
-          </tr>
-        </table>
-      </div>
-      <div className="women__jersey">
-        <h4>Womens JERSEY</h4>
-        <table>
-          <tr>
-            <th>Size</th>
-            <th>Height(cm)</th>
-            <th>Weight(kg)</th>
-            <th>Clothing Lenght(cm)</th>
-            <th>Bust(cm)</th>
-          </tr>
-          <tr>
-            <td>S</td>
-            <td>140-150</td>
-            <td>74</td>
-            <td>63</td>
-            <td>84</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>150-160</td>
-            <td>78</td>
-            <td>65</td>
-            <td>88</td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>160-170</td>
-            <td>82</td>
-            <td>67</td>
-            <td>92</td>
-          </tr>
-          <tr>
-            <td>XL</td>
-            <td>170-175</td>
-            <td>86</td>
-            <td>69</td>
-            <td>96</td>
-          </tr>
-        </table>
-      </div>
-      <div className="men__jersey">
-        <h4>Kids JERSEY</h4>
-        <table>
-          <tr>
-            <th>Size</th>
-            <th>Height(cm)</th>
-            <th>Age</th>
-            <th>Clothing Lenght(cm)</th>
-            <th>1/2Bust(cm)</th>
-            <th>1/2Waistline(cm)</th>
-            <th>Pants Length</th>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>95-105</td>
-            <td>3-5</td>
-            <td>45</td>
-            <td>34</td>
-            <td>18</td>
-            <td>31</td>
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>105-115</td>
-            <td>5-6</td>
-            <td>48</td>
-            <td>36</td>
-            <td>20</td>
-            <td>33</td>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>115-125</td>
-            <td>6-7</td>
-            <td>51</td>
-            <td>38</td>
-            <td>22</td>
-            <td>35</td>
-          </tr>
-          <tr>
-            <td>22</td>
-            <td>125-135</td>
-            <td>7-8</td>
-            <td>54</td>
-            <td>40</td>
-            <td>24</td>
-            <td>37</td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>135-145</td>
-            <td>9-10</td>
-            <td>57</td>
-            <td>42</td>
-            <td>26</td>
-            <td>39</td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>145-160</td>
-            <td>11-12</td>
-            <td>60</td>
-            <td>44</td>
-            <td>28</td>
-            <td>41</td>
-          </tr>
-          <tr>
-            <td>28</td>
-            <td>160-170</td>
-            <td>13-15</td>
-            <td>63</td>
-            <td>46</td>
-            <td>30</td>
-            <td>43</td>
-          </tr>
-        </table>
-      </div>
-      <div className="men__jersey">
-        <h4>Mens Training Suit</h4>
-        <table>
-          <tr>
-            <th>Size</th>
-            <th>Height(cm)</th>
-            <th>Weight(kg)</th>
-            <th>Clothing Lenght(cm)</th>
-            <th>Bust(cm)</th>
-            <th>Shoulder Width(cm)</th>
-            <th>Pants Length(cm)</th>
-          </tr>
-          <tr>
-            <td>S</td>
-            <td>161-170</td>
-            <td>50-67</td>
-            <td>67</td>
-            <td>96</td>
-            <td>74.5</td>
-            <td>98</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>171-176</td>
-            <td>62-75</td>
-            <td>70</td>
-            <td>100</td>
-            <td>76</td>
-            <td>101</td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>176-182</td>
-            <td>70-80</td>
-            <td>72</td>
-            <td>104</td>
-            <td>77.5</td>
-            <td>104</td>
-          </tr>
-          <tr>
-            <td>XL</td>
-            <td>182-190</td>
-            <td>81-90</td>
-            <td>74</td>
-            <td>106</td>
-            <td>79</td>
-            <td>107</td>
-          </tr>
-        </table>
-      </div>
+      <label className="block text-center mt-4 md:8/12 lg:6/12">
+        <select
+          onChange={(e) => {
+            setSizeChartOption(e.target.value);
+            console.log(sizeChartOption);
+          }}
+          className="border h-8 mt-1 text-neutral-600"
+        >
+          <option selected>--Please Select--</option>
+          <option>MEN'S JERSEY</option>
+          <option>WOMEN'S JERSEY</option>
+          <option>KID'S JERSEY</option>
+          <option>MEN'S TRAINING SUIT</option>
+        </select>
+      </label>
+      {sizeChartOption === "MEN'S JERSEY" && <MenJersey />}
+      {sizeChartOption === "WOMEN'S JERSEY" && <WomanJersey />}
+      {sizeChartOption === "KID'S JERSEY" && <KidJersey />}
+      {sizeChartOption === "MEN'S TRAINING SUIT" && <MenTrainingSuit />}
     </div>
   );
 };

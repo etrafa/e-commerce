@@ -6,7 +6,7 @@ const faq = () => {
       <h1 className="text-border text-2xl font-bold text-center">
         F.A.Q & Help
       </h1>
-      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto">
+      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12">
         <h4 className="font-bold">How to choose my size?</h4>
         <p>
           All products we sell on the site are in European size. If you are not
@@ -97,7 +97,6 @@ const faq = () => {
           website are available in stock now. You could directly place a new
           order online.
         </p>
-        <hr />
       </div>
     </div>
   );

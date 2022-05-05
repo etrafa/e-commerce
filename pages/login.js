@@ -8,7 +8,7 @@ const login = () => {
           LOGIN OR CREATE AN ACCOUNT
         </h1>
       </div>
-      <div className="border-2 px-8 mt-4 py-4 w-11/12 mx-auto">
+      <div className="border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12">
         <h4>NEW CUSTOMERS</h4>
         <p>
           By creating an account with our store, you will be able to move
@@ -17,7 +17,7 @@ const login = () => {
         </p>
       </div>
 
-      <div className="border-2 px-8 mt-4 py-4 w-11/12 mx-auto">
+      <div className="border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12">
         <h4>REGISTERED CUSTOMERS</h4>
         <p>If you have an account, please log in.</p>
         <div>

@@ -34,7 +34,7 @@ const Footer = () => {
           <h2>CUSTOMER SERVICE</h2>
           <hr className="mt-2 w-11/12 border-gray-400" />
           <ul className="mt-3">
-            <Link href="/sizechart">
+            <Link href="/size-chart">
               <li className="cursor-pointer hover:text-hoverText">
                 Size Chart
               </li>

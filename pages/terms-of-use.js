@@ -4,7 +4,7 @@ const termsofuse = () => {
       <h1 className="text-border text-2xl font-bold text-center">
         TERMS OF USE
       </h1>
-      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto">
+      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12">
         <p>
           1. Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Accusantium ipsum corporis inventore.

@@ -4,7 +4,7 @@ const shippingdelivery = () => {
       <h1 className="text-border text-2xl font-bold text-center">
         SHIPPING & DELIVERY
       </h1>
-      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto text-sm leading-7">
+      <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12 text-sm leading-7">
         <p>
           We are proud to offer international shipping services that currently
           operate in over 200 countries and islands world wide. Nothing means
