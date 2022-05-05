@@ -4,7 +4,7 @@ import UserPanel from "./Navbar/UserPanel";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="flex flex-col justify-between h-screen">
       <UserPanel />
       <Navbar />
       {children}

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,6 +14,9 @@ const ShoppingCart = () => {
     );
     console.log(shoppingCartItems);
   };
+
+  // ? Adjust the Product Number
+  const [productQty, setProductQty] = useState(1);
 
   return (
     <div className="mt-6">
@@ -73,11 +76,20 @@ const ShoppingCart = () => {
                 )}
                 <td className="border-r border-b w-2/12 text-center text-searchBar">
                   <div className="flex justify-evenly items-center text-center">
-                    <button className="w-6 h-6 border text-center text-black font-bold hover:text-hoverText">
+                    <button
+                      onClick={() => {
+                        if (productQty <= 1) return 1;
+                        else setProductQty((prev) => prev - 1);
+                      }}
+                      className="w-6 h-6 border text-center text-black font-bold hover:text-hoverText"
+                    >
                       -
                     </button>
-                    <span>1</span>
-                    <button className="w-6 h-6 border text-center text-black font-bold hover:text-hoverText">
+                    <span>{productQty}</span>
+                    <button
+                      onClick={() => setProductQty((prev) => prev + 1)}
+                      className="w-6 h-6 border text-center text-black font-bold hover:text-hoverText"
+                    >
                       +
                     </button>
                   </div>
