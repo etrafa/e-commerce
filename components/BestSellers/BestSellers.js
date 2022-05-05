@@ -22,6 +22,7 @@ const BestSellers = () => {
               price={shirt.price}
               id={shirt.uid}
               leauge={shirt.leauge}
+              backLarge={shirt.backLarge}
             />
           );
         })}

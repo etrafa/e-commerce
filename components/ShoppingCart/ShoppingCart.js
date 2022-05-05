@@ -31,7 +31,7 @@ const ShoppingCart = () => {
         <div className="text-center mt-24">
           <strong>No items in the basket</strong>
           <Link href="/">
-            <span className="block text-blue-600 underline cursor-pointer mt-12">
+            <span className="block text-blue-600 underline cursor-pointer mt-12 hover:text-blue-400">
               Click here to go home
             </span>
           </Link>
@@ -53,12 +53,16 @@ const ShoppingCart = () => {
           {shoppingCartItems.map((item) => (
             <tbody>
               <tr>
-                <td className="border-r border-b w-3/12 text-center">
-                  <Image src={item.frontSmall} width={80} height={80} />
+                <td className="border-r border-b w-3/12 text-center cursor-pointer">
+                  <Link href={`/products/${item.id}`}>
+                    <Image src={item.frontSmall} width={80} height={80} />
+                  </Link>
                 </td>
-                <td className="border-r border-b w-3/12 text-center text-searchBar">
-                  {item.tshirtName}
-                </td>
+                <Link href={`/products/${item.id}`}>
+                  <td className="border-r border-b w-3/12 text-center text-searchBar hover:text-black cursor-pointer">
+                    {item.tshirtName}
+                  </td>
+                </Link>
                 {currency === "USD" && (
                   <td className="border-r border-b w-2/12 text-center text-searchBar">
                     ${item.price}

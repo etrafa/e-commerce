@@ -24,6 +24,7 @@ const Bundesliga = () => {
               price={shirt.price}
               id={shirt.id}
               leauge={shirt.leauge}
+              backLarge={shirt.backLarge}
             />
           );
         })}

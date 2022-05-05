@@ -6,7 +6,14 @@ import Link from "next/link";
 import { useContext } from "react";
 import { CurrencyContext } from "../Context/CurrencyContext";
 
-const MainShirts = ({ frontLarge, tshirtName, price, id, leauge }) => {
+const MainShirts = ({
+  frontLarge,
+  tshirtName,
+  price,
+  id,
+  leauge,
+  backLarge,
+}) => {
   const { currency, setProductID, setProductLeauge } =
     useContext(CurrencyContext);
 
@@ -19,12 +26,35 @@ const MainShirts = ({ frontLarge, tshirtName, price, id, leauge }) => {
         }}
         className="text-center py-8"
       >
-        <Image
-          className="cursor-pointer"
-          width={240}
-          height={240}
-          src={frontLarge}
-        />
+        {/* // ? ON HOVER SHOW SECOND IMAGE OF PRODUCT */}
+        {backLarge ? (
+          <div className="group">
+            <span className="cursor-pointer group-hover:hidden">
+              <Image
+                className="cursor-pointer"
+                width={240}
+                height={240}
+                src={frontLarge}
+              />
+            </span>
+            {backLarge && (
+              <span className="cursor-pointer hidden group-hover:block">
+                <Image priority src={backLarge} width={240} height={240} />
+              </span>
+            )}
+          </div>
+        ) : (
+          /* // ? SHOW FIRST IMAGE OF PRODUCT IF THERE IS NO SECOND PICTURE */
+          <span className="cursor-pointer group-hover:hidden">
+            <Image
+              className="cursor-pointer"
+              width={240}
+              height={240}
+              src={frontLarge}
+            />
+          </span>
+        )}
+
         <span className="text-sm block text-border font-medium cursor-pointer hover:text-hoverText">
           {tshirtName.slice(0, 30).toUpperCase()}
         </span>
