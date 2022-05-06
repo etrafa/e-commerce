@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const UserAccount = () => {
   return (
     <div className="flex items-center cursor-pointer relative group">
@@ -37,7 +39,9 @@ const UserAccount = () => {
           <hr />
           <li className="h-8 mt-2 hover:text-hoverText">My Cart</li>
           <hr />
-          <li className="h-8 mt-2 hover:text-hoverText">Log in</li>
+          <Link href="/create-account">
+            <li className="h-8 mt-2 hover:text-hoverText">Log in</li>
+          </Link>
           <hr />
         </ul>
       </div>

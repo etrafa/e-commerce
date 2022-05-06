@@ -66,18 +66,22 @@ const Footer = () => {
             <Link href="/login">
               <li className="cursor-pointer hover:text-hoverText">LOG IN</li>
             </Link>
-            <li className="mt-2 cursor-pointer hover:text-hoverText">
-              SIGN UP
-            </li>
+            <Link href="/create-account">
+              <li className="mt-2 cursor-pointer hover:text-hoverText">
+                SIGN UP
+              </li>
+            </Link>
             <li className="mt-2 cursor-pointer hover:text-hoverText">
               My Account
             </li>
             <li className="mt-2 cursor-pointer hover:text-hoverText">
               My Orders
             </li>
-            <li className="mt-2 cursor-pointer hover:text-hoverText">
-              Forgot Password
-            </li>
+            <Link href="/forgot-password">
+              <li className="mt-2 cursor-pointer hover:text-hoverText">
+                Forgot Password
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="pt-8 px-6">
