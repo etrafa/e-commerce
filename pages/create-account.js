@@ -1,27 +1,61 @@
+//usecontext
 import { useContext } from "react";
 import { CurrencyContext } from "../Context/CurrencyContext";
+
+//components & functions
+import SignUpError from "../components/Error-Success/SignUpError";
 import SignUpWithGoogle from "../components/Login/SignUpWithGoogle";
+import SignUpSuccess from "../components/Error-Success/SignUpSuccess";
+import { signUp } from "../functions/signUp";
 
 const createaccount = () => {
   //? STORE USER LOGIN INFORMATION
-  const { registerNewUser, setRegisterNewUser } = useContext(CurrencyContext);
-
-  //? SAVE USER LOGIN INFORMATION TO DATABASE
+  const {
+    registerNewUser,
+    setRegisterNewUser,
+    setSignUpErrorModal,
+    setSignUpModalMessage,
+    setSignUpSuccessModal,
+  } = useContext(CurrencyContext);
 
   const registerUserToDB = (e) => {
     let newUser = { [e.target.name]: e.target.value };
     setRegisterNewUser({ ...registerNewUser, ...newUser });
   };
 
+  //SEND NEW USER REGISTRATION TO DATABASE
   const handleRegistration = () => {
-    console.log(registerNewUser);
+    if (registerNewUser.password !== registerNewUser.passwordAgain) {
+      setSignUpErrorModal(true);
+      setSignUpModalMessage("Password must be same");
+    } else if (
+      (registerNewUser.firstName =
+        "" ||
+        registerNewUser.lastName === "" ||
+        registerNewUser.email === "" ||
+        registerNewUser.password === "" ||
+        registerNewUser.passwordAgain === "")
+    ) {
+      setSignUpErrorModal(true);
+      setSignUpModalMessage("Please fill out every required place.");
+    } else
+      signUp(
+        registerNewUser.email,
+        registerNewUser.password,
+        setSignUpModalMessage,
+        setSignUpErrorModal,
+        setSignUpSuccessModal
+      );
   };
 
   return (
-    <div className="mt-6 ">
+    <div className="mt-6 relative">
+      <SignUpError />
+      <SignUpSuccess />
       <h1 className="text-border text-2xl font-bold text-center">
         CREATE AN ACCOUNT
       </h1>
+
       <div className="w-full text-center mt-12 lg:w-2/12 lg:mx-auto">
         <SignUpWithGoogle />
         <figure className="border relative mt-6 w-11/12 mx-auto">
@@ -30,6 +64,7 @@ const createaccount = () => {
           </span>
         </figure>
       </div>
+
       <div className="border-2 px-8 mt-8 py-4 w-11/12 mx-auto flex flex-col md:w-8/12 lg:w-6/12 relative">
         <h2 className="text-black font-semibold text-center absolute -top-3 bg-white px-2">
           PERSONAL INFORMATION
@@ -99,6 +134,7 @@ const createaccount = () => {
             />
           </label>
         </div>
+
         <button
           onClick={handleRegistration}
           className="block border w-44 h-10 mt-4 mx-auto bg-footer text-white font-bold hover:bg-white hover:text-footer"

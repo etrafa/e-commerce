@@ -35,6 +35,11 @@ function MyApp({ Component, pageProps }) {
     passwordAgain: "",
   });
 
+  //! ERROR TRACKER
+  const [signUpErrorModal, setSignUpErrorModal] = useState(false);
+  const [signUpSuccessModal, setSignUpSuccessModal] = useState(false);
+  const [signUpModalMessage, setSignUpModalMessage] = useState("");
+
   useEffect(() => {
     setShowing(true);
   }, []);
@@ -59,6 +64,12 @@ function MyApp({ Component, pageProps }) {
           setIsProductSizeEmpty,
           registerNewUser,
           setRegisterNewUser,
+          signUpErrorModal,
+          setSignUpErrorModal,
+          signUpModalMessage,
+          setSignUpModalMessage,
+          signUpSuccessModal,
+          setSignUpSuccessModal,
         }}
       >
         <Layout>
