@@ -26,6 +26,15 @@ function MyApp({ Component, pageProps }) {
   //SIZE NOT CHOOSEN ERROR MODAL
   const [isProductSizeEmpty, setIsProductSizeEmpty] = useState(false);
 
+  //USER REGISTER INFORMATION
+  const [registerNewUser, setRegisterNewUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    passwordAgain: "",
+  });
+
   useEffect(() => {
     setShowing(true);
   }, []);
@@ -48,6 +57,8 @@ function MyApp({ Component, pageProps }) {
           setShoppingCartItems,
           isProductSizeEmpty,
           setIsProductSizeEmpty,
+          registerNewUser,
+          setRegisterNewUser,
         }}
       >
         <Layout>
