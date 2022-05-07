@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
-import SizeSelectionError from "../Errors/SizeSelectionError";
+import SizeSelectionError from "../Error-Success/SizeSelectionError";
 
 const ProductUserEvents = ({ tshirtName, price, frontSmall, id }) => {
   //track currency

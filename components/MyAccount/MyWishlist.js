@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const MyWishlist = () => {
   return (
-    <Link href="/">
+    <Link href="/my-wishlist">
       <div
         className={`${styles.wishlistAnimation} w-96 h-48 border flex flex-col items-center justify-center hover:font-extrabold cursor-pointer hover:text-hoverText`}
       >

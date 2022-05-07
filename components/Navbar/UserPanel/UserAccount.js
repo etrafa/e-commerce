@@ -1,6 +1,14 @@
 import Link from "next/link";
 
+//context
+import { useContext } from "react";
+import { CurrencyContext } from "../../../Context/CurrencyContext";
+import { signOutUser } from "../../../functions/signOut";
+import { useRouter } from "next/router";
+
 const UserAccount = () => {
+  const { isUserLogedIn, setIsUserLogedIn } = useContext(CurrencyContext);
+  const router = useRouter();
   return (
     <div className="flex items-center cursor-pointer relative group">
       <svg
@@ -17,6 +25,7 @@ const UserAccount = () => {
           d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
         />
       </svg>
+      <span className="text-sm">My Account</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"
@@ -37,16 +46,29 @@ const UserAccount = () => {
             <li className="h-8 mt-1 hover:text-hoverText">My Account</li>
           </Link>
           <hr />
-          <li className="h-8 mt-2 hover:text-hoverText">My Wishlist</li>
+          <Link href="/my-wishlist">
+            <li className="h-8 mt-2 hover:text-hoverText">My Wishlist</li>
+          </Link>
           <hr />
           <Link href="/shopping-cart">
             <li className="h-8 mt-2 hover:text-hoverText">My Cart</li>
           </Link>
-
           <hr />
-          <Link href="/create-account">
-            <li className="h-8 mt-2 hover:text-hoverText">Log in</li>
-          </Link>
+          {/* //? IF USER HASN'T SIGNED UP YET SHOW LOG IN OTHERWISE SHOW SIGN OUT */}
+          {isUserLogedIn ? (
+            <Link href="/create-account">
+              <li
+                onClick={() => signOutUser(setIsUserLogedIn, router)}
+                className="h-8 mt-2 hover:text-hoverText"
+              >
+                Log out
+              </li>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <li className="h-8 mt-2 hover:text-hoverText">Log in</li>
+            </Link>
+          )}
           <hr />
         </ul>
       </div>

@@ -71,9 +71,11 @@ const Footer = () => {
                 SIGN UP
               </li>
             </Link>
-            <li className="mt-2 cursor-pointer hover:text-hoverText">
-              My Account
-            </li>
+            <Link href="/my-account">
+              <li className="mt-2 cursor-pointer hover:text-hoverText">
+                My Account
+              </li>
+            </Link>
             <li className="mt-2 cursor-pointer hover:text-hoverText">
               My Orders
             </li>

@@ -7,6 +7,7 @@ import SignUpWithGoogle from "../components/Login/SignUpWithGoogle";
 //context
 import { useContext } from "react";
 import { CurrencyContext } from "../Context/CurrencyContext";
+import MyAccount from "../components/MyAccount/MyAccount";
 
 const login = () => {
   const { isUserLogedIn } = useContext(CurrencyContext);
@@ -14,12 +15,7 @@ const login = () => {
   return (
     <div className="mt-6">
       {isUserLogedIn ? (
-        <div>
-          <h1 className="text-border text-2xl font-bold text-center">LOGIN</h1>
-          <h3 className="mt-12 text-xl font-bold text-center">
-            You already loged in.
-          </h3>
-        </div>
+        <MyAccount />
       ) : (
         <div>
           <h1 className="text-border text-2xl font-bold text-center">LOGIN</h1>

@@ -8,6 +8,7 @@ import SignUpWithGoogle from "../components/Login/SignUpWithGoogle";
 import SignUpSuccess from "../components/Error-Success/SignUpSuccess";
 import { signUp } from "../functions/signUp";
 import { signUpWithGoogleProvider } from "../functions/signUpWithGoogleProvider";
+import MyAccount from "../components/MyAccount/MyAccount";
 
 const createaccount = () => {
   //? STORE USER LOGIN INFORMATION
@@ -23,6 +24,7 @@ const createaccount = () => {
   const registerUserToDB = (e) => {
     let newUser = { [e.target.name]: e.target.value };
     setRegisterNewUser({ ...registerNewUser, ...newUser });
+    console.log(registerNewUser);
   };
 
   //SEND NEW USER REGISTRATION TO DATABASE
@@ -31,12 +33,11 @@ const createaccount = () => {
       setSignUpErrorModal(true);
       setSignUpModalMessage("Password must be same");
     } else if (
-      (registerNewUser.firstName =
-        "" ||
-        registerNewUser.lastName === "" ||
-        registerNewUser.email === "" ||
-        registerNewUser.password === "" ||
-        registerNewUser.passwordAgain === "")
+      registerNewUser.firstName === "" ||
+      registerNewUser.lastName === "" ||
+      registerNewUser.email === "" ||
+      registerNewUser.password === "" ||
+      registerNewUser.passwordAgain === ""
     ) {
       setSignUpErrorModal(true);
       setSignUpModalMessage("Please fill out every required place.");
@@ -46,21 +47,15 @@ const createaccount = () => {
         registerNewUser.password,
         setSignUpModalMessage,
         setSignUpErrorModal,
-        setSignUpSuccessModal
+        setSignUpSuccessModal,
+        console.log(registerNewUser)
       );
   };
 
   return (
     <div className="mt-6 relative">
       {isUserLogedIn ? (
-        <div>
-          <h1 className="text-border text-2xl font-bold text-center">
-            CREATE AN ACCOUNT
-          </h1>
-          <h3 className="mt-12 text-xl font-bold text-center">
-            You already loged in.
-          </h3>
-        </div>
+        <MyAccount />
       ) : (
         <div>
           <SignUpError />
