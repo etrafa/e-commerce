@@ -40,6 +40,9 @@ function MyApp({ Component, pageProps }) {
   const [signUpSuccessModal, setSignUpSuccessModal] = useState(false);
   const [signUpModalMessage, setSignUpModalMessage] = useState("");
 
+  //CHECK IF USER IS STILL LOG IN OR NOT
+  const [isUserLogedIn, setIsUserLogedIn] = useState(false);
+
   useEffect(() => {
     setShowing(true);
   }, []);
@@ -70,6 +73,8 @@ function MyApp({ Component, pageProps }) {
           setSignUpModalMessage,
           signUpSuccessModal,
           setSignUpSuccessModal,
+          isUserLogedIn,
+          setIsUserLogedIn,
         }}
       >
         <Layout>

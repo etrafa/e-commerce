@@ -1,6 +1,16 @@
-const SignUpWithGoogle = () => {
+import { useRouter } from "next/router";
+import { useContext } from "react";
+import { CurrencyContext } from "../../Context/CurrencyContext";
+
+const SignUpWithGoogle = ({ signUpWithGoogleProvider }) => {
+  const router = useRouter();
+  const { setIsUserLogedIn } = useContext(CurrencyContext);
+
   return (
-    <button className="border-2 flex w-11/12 h-12 items-center justify-center mx-auto mt-4 hover:bg-slate-100">
+    <button
+      onClick={() => signUpWithGoogleProvider(setIsUserLogedIn, router)}
+      className="border-2 flex w-11/12 h-12 items-center justify-center mx-auto mt-4 hover:bg-slate-100"
+    >
       <svg
         className="w-5 h-5"
         viewBox="0 0 24 24"
