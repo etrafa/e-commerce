@@ -33,11 +33,16 @@ const UserAccount = () => {
       <div className=" w-32 absolute top-6 bg-white text-border hidden group-hover:block z-50">
         <ul className="mt-2 text-border">
           <li className="border-2 border-hoverText"></li>
-          <li className="h-8 mt-1 hover:text-hoverText">My Account</li>
+          <Link href="/my-account">
+            <li className="h-8 mt-1 hover:text-hoverText">My Account</li>
+          </Link>
           <hr />
           <li className="h-8 mt-2 hover:text-hoverText">My Wishlist</li>
           <hr />
-          <li className="h-8 mt-2 hover:text-hoverText">My Cart</li>
+          <Link href="/shopping-cart">
+            <li className="h-8 mt-2 hover:text-hoverText">My Cart</li>
+          </Link>
+
           <hr />
           <Link href="/create-account">
             <li className="h-8 mt-2 hover:text-hoverText">Log in</li>

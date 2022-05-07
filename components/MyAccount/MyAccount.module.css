@@ -1,0 +1,28 @@
+.settingsAnimation:hover svg {
+  animation: rotate 3.8s linear infinite;
+}
+
+.wishlistAnimation:hover svg {
+  animation: fillColor 1.5s linear infinite;
+}
+
+.cartAnimation:hover svg {
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fillColor {
+  from {
+    fill: none;
+  }
+  to {
+    fill: orange;
+  }
+}
