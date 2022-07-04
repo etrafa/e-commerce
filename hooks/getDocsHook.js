@@ -1,4 +1,4 @@
-import { doc, getDocs } from "firebase/firestore";
+import { getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 export const getDocsHook = (url) => {

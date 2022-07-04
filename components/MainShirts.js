@@ -20,7 +20,7 @@ const MainShirts = ({
   return (
     <Link href={"/products/" + id}>
       <div
-        className="text-center py-8"
+        className="text-center py-8 flex flex-col justify-between items-center"
         onClick={() => {
           setProductID(id);
           setProductLeauge(leauge);
