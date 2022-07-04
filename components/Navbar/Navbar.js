@@ -67,43 +67,43 @@ const Navbar = () => {
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/national-teams">
+          <Link href="/store/national-teams">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               NATIONAL TEAM
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/premier-leauge">
+          <Link href="/store/premier-leauge">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               PREMIER LEAUGE
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/bundesliga">
+          <Link href="/store/bundesliga">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               BUNDESLIGA
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/seriea-leauge">
+          <Link href="/store/seriea-leauge">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               SERIE A
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/la-liga">
+          <Link href="/store/la-liga">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               LA LIGA
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/ligue-one">
+          <Link href="/store/ligue-one">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               LIGUE 1
             </li>
           </Link>
           <hr className="w-8/12 ml-8 border-slate-300" />
-          <Link href="/other-clubs">
+          <Link href="/store/other-clubs">
             <li className="mx-8 mt-5 cursor-pointer list-none hover:text-hoverText hover:underline">
               OTHER CLUBS
             </li>
@@ -119,37 +119,37 @@ const Navbar = () => {
             HOME
           </p>
         </Link>
-        <Link href="/national-teams">
+        <Link href="/store/national-teams">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             NATIONAL TEAM
           </p>
         </Link>
-        <Link href="/premier-leauge">
+        <Link href="/store/premier-leauge">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             PREMIER LEAUGE
           </p>
         </Link>
-        <Link href="/bundesliga">
+        <Link href="/store/bundesliga">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             BUNDESLIGA
           </p>
         </Link>
-        <Link href="/seriea-leauge">
+        <Link href="/store/seriea-leauge">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             SERIE A
           </p>
         </Link>
-        <Link href="/la-liga">
+        <Link href="/store/la-liga">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             LA LIGA
           </p>
         </Link>
-        <Link href="/ligue-one">
+        <Link href="/store/ligue-one">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             LIGUE 1
           </p>
         </Link>
-        <Link href="/other-clubs">
+        <Link href="/store/other-clubs">
           <p className="mx-6 cursor-pointer hover:text-hoverText hover:underline">
             OTHER CLUBS
           </p>
