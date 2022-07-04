@@ -13,6 +13,7 @@ module.exports = {
         searchBar: "#777",
         strongRed: "#ff0000",
         tableGray: "#EFEFEF",
+        borderRed: "#B32B2B",
       },
       display: ["group-hover"],
     },
