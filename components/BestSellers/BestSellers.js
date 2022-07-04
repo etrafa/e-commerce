@@ -1,6 +1,6 @@
 //firebase
 import { db } from "../../firebase/firebaseConfig";
-import { collection, doc, getDoc } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 
 //getDocs Hook
 import { getDocsHook } from "../../hooks/getDocsHook";
@@ -11,7 +11,7 @@ const BestSellers = () => {
   const { dbData } = getDocsHook(userCollectionRef);
 
   return (
-    <div className="grid grid-cols-2 px-4 mt-12 md:grid-cols-3 lg:grid-cols-4 lg:mx-36 xl:grid-cols-5">
+    <div className="grid grid-cols-2 px-4 mt-12 md:grid-cols-3 lg:grid-cols-4 lg:mx-36 xl:grid-cols-5 gap-x-8">
       {dbData &&
         dbData.map((shirt) => {
           return (

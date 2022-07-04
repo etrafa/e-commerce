@@ -20,11 +20,11 @@ const MainShirts = ({
   return (
     <Link href={"/products/" + id}>
       <div
+        className="text-center py-8"
         onClick={() => {
           setProductID(id);
           setProductLeauge(leauge);
         }}
-        className="text-center py-8"
       >
         {/* // ? ON HOVER SHOW SECOND IMAGE OF PRODUCT */}
         {backLarge ? (
@@ -54,18 +54,19 @@ const MainShirts = ({
             />
           </span>
         )}
-
         <span className="text-sm block text-border font-medium cursor-pointer hover:text-hoverText">
-          {tshirtName.slice(0, 30).toUpperCase()}
+          {tshirtName?.toUpperCase()}
         </span>
         <hr className="w-10/12 mt-1" />
         <div className="mb-6">
-          {currency === "USD" && <span className="text-red-400">${price}</span>}
+          {currency === "USD" && (
+            <span className="text-gray-600 font-bold">${price}</span>
+          )}
           {currency === "EUR" && (
-            <span className="text-orange-400">{price * 0.95}€</span>
+            <span className="text-gray-600 font-bold">{price * 0.95}€</span>
           )}
           {currency === "GBP" && (
-            <span className=" text-lime-500">{price * 0.8}£</span>
+            <span className="text-gray-600 font-bold">{price * 0.8}£</span>
           )}
         </div>
       </div>

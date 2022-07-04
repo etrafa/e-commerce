@@ -1,15 +1,10 @@
-import { useRouter } from "next/router";
-import { useContext } from "react";
-import { CurrencyContext } from "../../Context/CurrencyContext";
+import { signInWithGoogleProvider } from "../../firebase/firebaseConfig";
 
-const SignUpWithGoogle = ({ signUpWithGoogleProvider }) => {
-  const router = useRouter();
-  const { setIsUserLogedIn } = useContext(CurrencyContext);
-
+const SignInWithGoogle = () => {
   return (
     <button
-      onClick={() => signUpWithGoogleProvider(setIsUserLogedIn, router)}
-      className="border-2 flex w-11/12 h-12 items-center justify-center mx-auto mt-4 hover:bg-slate-100"
+      onClick={signInWithGoogleProvider}
+      className="border-2 flex w-11/12 lg:w-full h-12 items-center justify-center mx-auto mt-4 hover:bg-slate-100"
     >
       <svg
         className="w-5 h-5"
@@ -38,9 +33,8 @@ const SignUpWithGoogle = ({ signUpWithGoogleProvider }) => {
       <span className="text-slate-900 font-medium text-sm ml-2">
         Continue with Google
       </span>
-      <span></span>
     </button>
   );
 };
 
-export default SignUpWithGoogle;
+export default SignInWithGoogle;

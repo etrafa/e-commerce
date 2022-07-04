@@ -4,11 +4,10 @@ import { CurrencyContext } from "../Context/CurrencyContext";
 
 //components & functions
 import SignUpError from "../components/Error-Success/SignUpError";
-import SignUpWithGoogle from "../components/Login/SignUpWithGoogle";
 import SignUpSuccess from "../components/Error-Success/SignUpSuccess";
-import { signUp } from "../functions/signUp";
-import { signUpWithGoogleProvider } from "../functions/signUpWithGoogleProvider";
 import MyAccount from "../components/MyAccount/MyAccount";
+import SignInWithGoogle from "../components/Login/SignInWithGoogle";
+import { signUpWithEmail, useAuth } from "../firebase/firebaseConfig";
 
 const createaccount = () => {
   //? STORE USER LOGIN INFORMATION
@@ -17,14 +16,13 @@ const createaccount = () => {
     setRegisterNewUser,
     setSignUpErrorModal,
     setSignUpModalMessage,
-    setSignUpSuccessModal,
-    isUserLogedIn,
   } = useContext(CurrencyContext);
+
+  const currentUser = useAuth();
 
   const registerUserToDB = (e) => {
     let newUser = { [e.target.name]: e.target.value };
     setRegisterNewUser({ ...registerNewUser, ...newUser });
-    console.log(registerNewUser);
   };
 
   //SEND NEW USER REGISTRATION TO DATABASE
@@ -42,19 +40,16 @@ const createaccount = () => {
       setSignUpErrorModal(true);
       setSignUpModalMessage("Please fill out every required place.");
     } else
-      signUp(
+      signUpWithEmail(
         registerNewUser.email,
         registerNewUser.password,
-        setSignUpModalMessage,
-        setSignUpErrorModal,
-        setSignUpSuccessModal,
-        console.log(registerNewUser)
+        registerNewUser.firstName
       );
   };
 
   return (
     <div className="mt-6 relative">
-      {isUserLogedIn ? (
+      {currentUser ? (
         <MyAccount />
       ) : (
         <div>
@@ -65,9 +60,7 @@ const createaccount = () => {
           </h1>
 
           <div className="w-full text-center mt-12 lg:w-2/12 lg:mx-auto">
-            <SignUpWithGoogle
-              signUpWithGoogleProvider={signUpWithGoogleProvider}
-            />
+            <SignInWithGoogle />
             <figure className="border relative mt-6 w-11/12 mx-auto">
               <span className="text-searchBar font-semibold text-center absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-2">
                 OR
@@ -82,20 +75,9 @@ const createaccount = () => {
             <div className="lg:flex lg:justify-between lg:mx-12 lg:mt-4">
               <label className="mt-4 lg:mt-0 text-searchBar">
                 <span className="text-strongRed font-semibold">* </span>
-                First Name
+                Name
                 <input
                   name="firstName"
-                  onChange={registerUserToDB}
-                  className="w-full lg:w-11/12 h-8 border rounded-sm"
-                  type="text"
-                  required
-                />
-              </label>
-              <label className="mt-4 lg:mt-0 text-searchBar">
-                <span className="text-strongRed font-semibold">* </span>
-                Last Name
-                <input
-                  name="lastName"
                   onChange={registerUserToDB}
                   className="w-full lg:w-11/12 h-8 border rounded-sm"
                   type="text"

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { useContext, useState } from "react";
-import { CurrencyContext } from "../../Context/CurrencyContext";
+import { useState } from "react";
 
 const ProductDetails = ({ frontSmall, backSmall, frontLarge, backLarge }) => {
   //set preview image

@@ -1,23 +1,19 @@
 //components
-
 import MyAccountOptions from "./MyAccountOptions";
 import MyWishlist from "./MyWishlist";
 import MyCart from "./MyCart";
 
-//context
-import { useContext } from "react";
-import { CurrencyContext } from "../../Context/CurrencyContext";
-
 //nextJS
 import Link from "next/link";
+import { useAuth } from "../../firebase/firebaseConfig";
 
 const MyAccount = () => {
-  const { isUserLogedIn } = useContext(CurrencyContext);
+  const currentUser = useAuth();
 
   return (
     <div className="mt-6 text-center mx-auto">
       <h1 className="text-border text-2xl font-bold text-center">MY ACCOUNT</h1>
-      {isUserLogedIn ? (
+      {currentUser ? (
         <div className="w-full grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-y-4 justify-center gap-x-4">
           <MyAccountOptions />
           <MyWishlist />

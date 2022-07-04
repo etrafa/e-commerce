@@ -1,13 +1,12 @@
 import Link from "next/link";
 
 //context
-import { useContext } from "react";
-import { CurrencyContext } from "../../../Context/CurrencyContext";
-import { signOutUser } from "../../../functions/signOut";
 import { useRouter } from "next/router";
+import { logOut, useAuth } from "../../../firebase/firebaseConfig";
 
 const UserAccount = () => {
-  const { isUserLogedIn, setIsUserLogedIn } = useContext(CurrencyContext);
+  const currentUser = useAuth();
+
   const router = useRouter();
   return (
     <div className="flex items-center cursor-pointer relative group">
@@ -55,10 +54,10 @@ const UserAccount = () => {
           </Link>
           <hr />
           {/* //? IF USER HASN'T SIGNED UP YET SHOW LOG IN OTHERWISE SHOW SIGN OUT */}
-          {isUserLogedIn ? (
+          {currentUser ? (
             <Link href="/create-account">
               <li
-                onClick={() => signOutUser(setIsUserLogedIn, router)}
+                onClick={() => logOut()}
                 className="h-8 mt-2 hover:text-hoverText"
               >
                 Log out

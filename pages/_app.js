@@ -9,6 +9,7 @@ import Layout from "../components/Layout";
 
 //react hooks
 import { useState, useEffect } from "react";
+import { useAuth } from "../firebase/firebaseConfig";
 
 function MyApp({ Component, pageProps }) {
   const [showing, setShowing] = useState(false);
@@ -29,7 +30,6 @@ function MyApp({ Component, pageProps }) {
   //USER REGISTER INFORMATION
   const [registerNewUser, setRegisterNewUser] = useState({
     firstName: "",
-    lastName: "",
     email: "",
     password: "",
     passwordAgain: "",
@@ -40,8 +40,8 @@ function MyApp({ Component, pageProps }) {
   const [signUpSuccessModal, setSignUpSuccessModal] = useState(false);
   const [signUpModalMessage, setSignUpModalMessage] = useState("");
 
-  //CHECK IF USER IS STILL LOG IN OR NOT
-  const [isUserLogedIn, setIsUserLogedIn] = useState(false);
+  const currentUser = useAuth();
+  console.log(currentUser?.displayName);
 
   useEffect(() => {
     setShowing(true);
@@ -73,8 +73,6 @@ function MyApp({ Component, pageProps }) {
           setSignUpModalMessage,
           signUpSuccessModal,
           setSignUpSuccessModal,
-          isUserLogedIn,
-          setIsUserLogedIn,
         }}
       >
         <Layout>
