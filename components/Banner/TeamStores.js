@@ -16,22 +16,22 @@ import styles from "./Banner.module.css";
 const TeamStores = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:w-10/12 xl:w-8/12 lg:mx-auto gap-4 mt-8">
-      <Link href="national-teams">
+      <Link href="/store/national-teams">
         <Image className={styles.zoomAnimation} src={NationalTeam} />
       </Link>
-      <Link href="premier-leauge">
+      <Link href="/store/premier-leauge">
         <Image className={styles.zoomAnimation} src={PremierLeauge} />
       </Link>
-      <Link href="bundesliga">
+      <Link href="/store/bundesliga">
         <Image className={styles.zoomAnimation} src={Bundesliga} />
       </Link>
-      <Link href="seriea-leauge">
+      <Link href="/store/seriea-leauge">
         <Image className={styles.zoomAnimation} src={SeriA} />
       </Link>
-      <Link href="la-liga">
+      <Link href="/store/la-liga">
         <Image className={styles.zoomAnimation} src={LaLiga} />
       </Link>
-      <Link href="ligue-one">
+      <Link href="/store/ligue-one">
         <Image className={styles.zoomAnimation} src={LigueOne} />
       </Link>
     </div>

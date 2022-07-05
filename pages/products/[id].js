@@ -37,6 +37,7 @@ const SingleProduct = () => {
               backLarge={singleProduct.backLarge}
             />
             <ProductShipmentInformation
+              singleProduct={singleProduct}
               tshirtName={singleProduct.tshirtName}
               isStock={singleProduct.isStock}
               price={singleProduct.price}

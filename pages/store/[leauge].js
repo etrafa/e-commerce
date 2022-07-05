@@ -27,8 +27,6 @@ const LeaugeStore = () => {
       }
     };
     fetchData();
-
-    console.log(data);
   }, [routerRef]);
 
   return (

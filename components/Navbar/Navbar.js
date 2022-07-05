@@ -155,7 +155,7 @@ const Navbar = () => {
           </p>
         </Link>
       </div>
-      <hr className="border-2 w-7/12 mx-auto mt-2 hidden lg:block" />
+      <hr className="border-2 w-10/12 max-w-screen-xl mx-auto mt-2 hidden lg:block" />
     </section>
   );
 };

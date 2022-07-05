@@ -41,7 +41,6 @@ function MyApp({ Component, pageProps }) {
   const [signUpModalMessage, setSignUpModalMessage] = useState("");
 
   const currentUser = useAuth();
-  console.log(currentUser?.displayName);
 
   useEffect(() => {
     setShowing(true);

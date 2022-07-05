@@ -44,6 +44,7 @@ export const signUpWithEmail = async (email, password, name) => {
   }
 };
 
+//signin with email
 export const signInWithEmail = async (email, password, modal) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -78,3 +79,7 @@ export const useAuth = () => {
 
   return currentUser;
 };
+
+//add items to user's cart
+
+//remove items from user's cart

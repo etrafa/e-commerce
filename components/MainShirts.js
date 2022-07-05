@@ -22,7 +22,6 @@ const MainShirts = ({
       <div
         className="text-center py-8 flex flex-col justify-between items-center"
         onClick={() => {
-          console.log(id);
           setProductID(id);
           setProductLeauge(leauge);
         }}

@@ -2,19 +2,13 @@ import Link from "next/link";
 import ProductNameAndPrice from "./ProductNameAndPrice";
 import ProductUserEvents from "./ProductUserEvents";
 
-const ProductShipmentInformation = ({
-  tshirtName,
-  price,
-  isStock,
-  frontSmall,
-  id,
-}) => {
+const ProductShipmentInformation = ({ singleProduct }) => {
   return (
     <div className="lg:ml-24">
       <ProductNameAndPrice
-        tshirtName={tshirtName}
-        price={price}
-        isStock={isStock}
+        tshirtName={singleProduct?.tshirtName}
+        price={singleProduct?.price}
+        isStock={singleProduct?.isStock}
       />
       <hr className="w-11/12 mx-auto mt-2" />
 
@@ -146,12 +140,7 @@ const ProductShipmentInformation = ({
           </span>
         </div>
       </div>
-      <ProductUserEvents
-        tshirtName={tshirtName}
-        price={price}
-        frontSmall={frontSmall}
-        id={id}
-      />
+      <ProductUserEvents singleProduct={singleProduct} />
     </div>
   );
 };

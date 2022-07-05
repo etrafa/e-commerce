@@ -7,9 +7,8 @@ const ProductDetails = ({ frontSmall, backSmall, frontLarge, backLarge }) => {
 
   return (
     <div className="mt-12">
-      <div className="text-center">
+      <div className="text-center relative">
         <Image src={previewImage} width={520} height={520} />
-        {/* //340 */}
       </div>
 
       {/* CLEAR FIX */}
@@ -21,7 +20,7 @@ const ProductDetails = ({ frontSmall, backSmall, frontLarge, backLarge }) => {
           <Image
             onClick={() => setPreviewImage(frontLarge)}
             src={frontSmall}
-            priority
+            priority={true}
             width={70}
             height={70}
           />

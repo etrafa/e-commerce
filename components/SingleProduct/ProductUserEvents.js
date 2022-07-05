@@ -1,42 +1,15 @@
 import { useContext, useState } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
 import SizeSelectionError from "../Error-Success/SizeSelectionError";
+import AddToCartButton from "./AddToCartButton";
+import AddToWishlistButton from "./AddToWishlistButton";
 
-const ProductUserEvents = ({ tshirtName, price, frontSmall, id }) => {
+const ProductUserEvents = ({ singleProduct }) => {
   //track currency
-  const {
-    currency,
-    shoppingCartItems,
-    setShoppingCartItems,
-    isProductSizeEmpty,
-    setIsProductSizeEmpty,
-  } = useContext(CurrencyContext);
+  const { currency, isProductSizeEmpty } = useContext(CurrencyContext);
 
   //PRODUCT SIZE OPTIONS
   const [productSize, setProductSize] = useState("");
-  const [buttonText, setButtonText] = useState("Add to Cart");
-
-  //ADD TO CART FUNCTION
-  const addToCart = () => {
-    // ? IF SIZE IS NOT SELECTED FORCE USER TO SELECT ONE //
-    if (productSize === "--Please Select--" || productSize === "") {
-      setIsProductSizeEmpty(true);
-      console.log("select size");
-    } else {
-      setIsProductSizeEmpty(false);
-      setButtonText("✔ Added");
-      setShoppingCartItems((prev) => [
-        ...prev,
-        {
-          id: id,
-          tshirtName: tshirtName,
-          price: price,
-          frontSmall: frontSmall,
-          productSize,
-        },
-      ]);
-    }
-  };
 
   return (
     <div className="relative">
@@ -113,12 +86,11 @@ const ProductUserEvents = ({ tshirtName, price, frontSmall, id }) => {
           <SizeSelectionError />
         </div>
       )}
-      <div
-        onClick={addToCart}
-        className="w-11/12 mt-6 mx-auto h-12 bg-black rounded-md text-center font-extrabold text-xl py-2 text-white cursor-pointer"
-      >
-        <button>{buttonText}</button>
-      </div>
+      <AddToCartButton
+        singleProduct={singleProduct}
+        productSize={productSize}
+      />
+      <AddToWishlistButton />
     </div>
   );
 };

@@ -16,6 +16,16 @@ module.exports = {
         borderRed: "#B32B2B",
       },
       display: ["group-hover"],
+      keyframes: {
+        addCart: {
+          "0%": { top: "-11rem", left: "-9rem", opacity: "0.7" },
+          "99%": { top: "-0.5rem", left: "2rem", opacity: "0.7" },
+          "100%": { opacity: "0" },
+        },
+      },
+      animation: {
+        addCart: "addCart 1s  forwards ",
+      },
     },
   },
 
