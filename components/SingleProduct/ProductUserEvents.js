@@ -93,7 +93,7 @@ const ProductUserEvents = ({ singleProduct }) => {
         productSize={productSize}
         setShowProductSizeError={setShowProductSizeError}
       />
-      <AddToWishlistButton />
+      <AddToWishlistButton singleProduct={singleProduct} />
     </div>
   );
 };

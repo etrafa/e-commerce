@@ -5,6 +5,7 @@ import {
   doc,
   getDocs,
   getFirestore,
+  onSnapshot,
   query,
   setDoc,
 } from "firebase/firestore";
@@ -122,7 +123,63 @@ export const removeItemFromCart = async (props) => {
 //show user's cart data from DB
 
 //add item to user's wishlist
+export const addItemToWishList = async (props, user) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async () => {
+    await setDoc(doc(db, `users/${user?.uid}/wish-list`, props.uid), {
+      ...props,
+    });
+  });
+};
 
 //remove item from user's wishlist
+export const removeItemFromWishList = async (props) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async (v) => {
+    await deleteDoc(doc(db, `users/${v.id}/wish-list`, props.uid));
+  });
+};
 
 //show user's wishlist data from DB
+export const useFetchData = (url) => {
+  const currentUser = useAuth();
+
+  const [fetchedData, setFetchedData] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const q = query(collection(db, "users"));
+      const snapshot = await getDocs(q);
+      const data = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+
+      data.map(async () => {
+        const likesQ = query(collection(db, `users/${currentUser.uid}/${url}`));
+        const unsub = onSnapshot(likesQ, (snapshot) => {
+          let result = [];
+          snapshot.docs.forEach((doc) => {
+            result.push(doc.data());
+          });
+          setFetchedData(result);
+        });
+        return () => unsub();
+      });
+    };
+    getData();
+  }, [currentUser]);
+  return { fetchedData };
+};

@@ -1,10 +1,24 @@
 import { useState } from "react";
+import {
+  addItemToWishList,
+  removeItemFromWishList,
+  useAuth,
+} from "../../firebase/firebaseConfig";
 
-const AddToWishlistButton = () => {
+const AddToWishlistButton = ({ singleProduct }) => {
   const [isAddToWishListActive, setIsAddToWishListActive] = useState(false);
+
+  const currentUser = useAuth();
 
   const wishListHandler = () => {
     setIsAddToWishListActive(!isAddToWishListActive);
+
+    //ADD-REMOVE ITEM FROM USER'S WISHLIST
+    if (isAddToWishListActive) {
+      removeItemFromWishList(singleProduct);
+    } else {
+      addItemToWishList(singleProduct, currentUser);
+    }
   };
 
   return (

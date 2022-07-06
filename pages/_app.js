@@ -39,6 +39,8 @@ function MyApp({ Component, pageProps }) {
 
   const currentUser = useAuth();
 
+  console.log(productID);
+
   useEffect(() => {
     setShowing(true);
   }, []);
