@@ -1,14 +1,35 @@
 import { useState } from "react";
 import Image from "next/image";
+import {
+  addItemToCart,
+  removeItemFromCart,
+  useAuth,
+} from "../../firebase/firebaseConfig";
 
-const AddToCartButton = ({ singleProduct, productSize }) => {
+const AddToCartButton = ({
+  singleProduct,
+  productSize,
+  setShowProductSizeError,
+}) => {
   const [isAddToCartActive, setIsAddToCartActive] = useState(false);
 
-  //ADD TO CART FUNCTION
+  const currentUser = useAuth();
+
+  console.log(productSize);
+
+  //ADD-REMOVE ITEM CART
   const addToCart = () => {
     // // ? IF SIZE IS NOT SELECTED FORCE USER TO SELECT ONE //
-    setIsAddToCartActive(true);
-    console.log(isAddToCartActive);
+    if (productSize === "--Please Select--" || productSize === "") {
+      setShowProductSizeError(true);
+    } else {
+      setIsAddToCartActive((currentIsOpen) => !currentIsOpen);
+      if (isAddToCartActive) {
+        removeItemFromCart(singleProduct);
+      } else if (!isAddToCartActive) {
+        addItemToCart(singleProduct, currentUser, productSize);
+      }
+    }
   };
 
   return (
@@ -16,11 +37,6 @@ const AddToCartButton = ({ singleProduct, productSize }) => {
       onClick={addToCart}
       className="relative w-11/12 mt-6 mx-auto h-12 border rounded-md text-center font-extrabold text-xl py-2 text-white cursor-pointer hover:bg-slate-100 flex px-12"
     >
-      {/* <img
-        className="absolute -top-32 -left-2"
-        src={singleProduct?.frontSmall}
-        alt=""
-      /> */}
       {isAddToCartActive ? (
         <span className="absolute animate-addCart">
           <Image src={singleProduct?.frontSmall} width={60} height={60} />
@@ -29,10 +45,12 @@ const AddToCartButton = ({ singleProduct, productSize }) => {
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
+        className={
+          isAddToCartActive
+            ? "fill-hoverText stroke-searchBar w-6 h-6 stroke-1"
+            : "fill-transparent stroke-black w-6 h-6"
+        }
         viewBox="0 0 24 24"
-        stroke="black"
         strokeWidth={2}
       >
         <path
@@ -41,9 +59,15 @@ const AddToCartButton = ({ singleProduct, productSize }) => {
           d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
         />
       </svg>
-      <button className="text-black font-bold text-base ml-4">
-        Add to Cart
-      </button>
+      {isAddToCartActive ? (
+        <button className="text-black font-bold text-base ml-4">
+          Added to Cart
+        </button>
+      ) : (
+        <button className="text-black font-bold text-base ml-4">
+          Add to Cart
+        </button>
+      )}
     </div>
   );
 };

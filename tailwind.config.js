@@ -22,9 +22,18 @@ module.exports = {
           "99%": { top: "-0.5rem", left: "2rem", opacity: "0.7" },
           "100%": { opacity: "0" },
         },
+        pulse: {
+          "0%:, 100%": {
+            opacity: 1,
+          },
+          "50%": {
+            opacity: 0.5,
+          },
+        },
       },
       animation: {
-        addCart: "addCart 1s  forwards ",
+        addCart: "addCart 1s forwards ",
+        animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) forwards",
       },
     },
   },

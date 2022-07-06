@@ -1,5 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { doc, getFirestore, setDoc } from "firebase/firestore";
+import {
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  getFirestore,
+  query,
+  setDoc,
+} from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -81,5 +89,40 @@ export const useAuth = () => {
 };
 
 //add items to user's cart
+export const addItemToCart = async (props, user, productSize) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async () => {
+    await setDoc(doc(db, `users/${user?.uid}/shopping-cart`, props.uid), {
+      ...props,
+      productSize: productSize,
+    });
+  });
+};
 
 //remove items from user's cart
+export const removeItemFromCart = async (props) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async (v) => {
+    await deleteDoc(doc(db, `users/${v.id}/shopping-cart`, props.uid));
+  });
+};
+
+//show user's cart data from DB
+
+//add item to user's wishlist
+
+//remove item from user's wishlist
+
+//show user's wishlist data from DB

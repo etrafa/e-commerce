@@ -24,9 +24,6 @@ function MyApp({ Component, pageProps }) {
   // SHOPPING CART TRACKER
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
-  //SIZE NOT CHOOSEN ERROR MODAL
-  const [isProductSizeEmpty, setIsProductSizeEmpty] = useState(false);
-
   //USER REGISTER INFORMATION
   const [registerNewUser, setRegisterNewUser] = useState({
     firstName: "",
@@ -62,8 +59,6 @@ function MyApp({ Component, pageProps }) {
           setProductLeauge,
           shoppingCartItems,
           setShoppingCartItems,
-          isProductSizeEmpty,
-          setIsProductSizeEmpty,
           registerNewUser,
           setRegisterNewUser,
           signUpErrorModal,

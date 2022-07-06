@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
-import SizeSelectionError from "../Error-Success/SizeSelectionError";
 import AddToCartButton from "./AddToCartButton";
 import AddToWishlistButton from "./AddToWishlistButton";
 
 const ProductUserEvents = ({ singleProduct }) => {
   //track currency
-  const { currency, isProductSizeEmpty } = useContext(CurrencyContext);
+  const { currency } = useContext(CurrencyContext);
 
   //PRODUCT SIZE OPTIONS
   const [productSize, setProductSize] = useState("");
+  const [showProductSizeError, setShowProductSizeError] = useState(false);
 
   return (
     <div className="relative">
@@ -17,9 +17,16 @@ const ProductUserEvents = ({ singleProduct }) => {
         <label className="flex flex-col ml-4 mt-4">
           <span className="text-red-400 text-sm">* Size</span>
           <select
+            className={
+              showProductSizeError
+                ? "border border-strongRed animate-pulse h-8 w-10/12 mt-1 text-neutral-600"
+                : "border h-8 w-10/12 mt-1 text-neutral-600"
+            }
             value={productSize}
-            onChange={(e) => setProductSize(e.target.value)}
-            className="border h-8 w-10/12 mt-1 text-neutral-600"
+            onChange={(e) => {
+              setProductSize(e.target.value);
+              setShowProductSizeError(false);
+            }}
           >
             <option selected>--Please Select--</option>
             <option>XS (34-36)</option>
@@ -81,14 +88,10 @@ const ProductUserEvents = ({ singleProduct }) => {
           * Required Fields
         </span>
       </form>
-      {isProductSizeEmpty && (
-        <div className="absolute top-0 left-0 w-full">
-          <SizeSelectionError />
-        </div>
-      )}
       <AddToCartButton
         singleProduct={singleProduct}
         productSize={productSize}
+        setShowProductSizeError={setShowProductSizeError}
       />
       <AddToWishlistButton />
     </div>
