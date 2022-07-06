@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }) {
   const [currency, setCurrency] = useState("USD");
 
   //URL TRACKER
-  const [productID, setProductID] = useState("");
   const [productLeuage, setProductLeauge] = useState("");
 
   // SHOPPING CART TRACKER
@@ -39,8 +38,6 @@ function MyApp({ Component, pageProps }) {
 
   const currentUser = useAuth();
 
-  console.log(productID);
-
   useEffect(() => {
     setShowing(true);
   }, []);
@@ -55,8 +52,7 @@ function MyApp({ Component, pageProps }) {
         value={{
           currency,
           setCurrency,
-          productID,
-          setProductID,
+
           productLeuage,
           setProductLeauge,
           shoppingCartItems,

@@ -24,6 +24,8 @@ const WishListTable = () => {
               key={item.uid}
               item={item}
               productID={item?.uid}
+              id={item?.uid}
+              leauge={item?.leauge}
             />
           ))}
       </table>

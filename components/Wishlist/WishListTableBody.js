@@ -1,21 +1,28 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { CurrencyContext } from "../../Context/CurrencyContext";
 
-const WishListTableBody = ({ item }) => {
-  console.log(item?.uid);
+const WishListTableBody = ({ item, leauge }) => {
+  const { currency, setProductLeauge } = useContext(CurrencyContext);
+
   return (
     <tbody>
       <tr className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
-        <Link href={`/products/${item?.uid}`}>
+        <Link href={"/products/" + item?.uid}>
           <th className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
             <img
+              onClick={() => setProductLeauge(leauge)}
               className="cursor-pointer hover:opacity-60"
               src={item?.frontSmall}
               alt={item?.tshirtName}
             />
           </th>
         </Link>
-        <Link href={`/products/${item?.uid}`}>
-          <td className="px-6 py-4 underline cursor-pointer hover:text-gray-400">
+        <Link href={"/products/" + item?.uid}>
+          <td
+            onClick={() => setProductLeauge(leauge)}
+            className="px-6 py-4 underline cursor-pointer hover:text-gray-400"
+          >
             {item?.tshirtName}
           </td>
         </Link>

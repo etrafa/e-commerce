@@ -1,6 +1,7 @@
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
+import { useRouter } from "next/dist/client/router";
 
 //useContext
 import { useContext } from "react";
@@ -13,10 +14,13 @@ import ProductDescription from "../../components/SingleProduct/ProductDescriptio
 
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState(null);
-  const { productID, productLeuage } = useContext(CurrencyContext);
+  const { productLeuage } = useContext(CurrencyContext);
+
+  const router = useRouter();
+  const { id } = router?.query;
 
   useEffect(() => {
-    const docRef = doc(db, productLeuage, productID);
+    const docRef = doc(db, productLeuage, id);
     const fetchSingleProduct = async () => {
       const response = await getDoc(docRef);
       setSingleProduct(response.data());
@@ -24,6 +28,8 @@ const SingleProduct = () => {
 
     fetchSingleProduct();
   }, []);
+
+  console.log(productLeuage);
 
   return (
     <div>

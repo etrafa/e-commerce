@@ -14,15 +14,13 @@ const MainShirts = ({
   leauge,
   backLarge,
 }) => {
-  const { currency, setProductID, setProductLeauge } =
-    useContext(CurrencyContext);
+  const { currency, setProductLeauge } = useContext(CurrencyContext);
 
   return (
     <Link href={"/products/" + id}>
       <div
         className="text-center py-8 flex flex-col justify-between items-center"
         onClick={() => {
-          setProductID(id);
           setProductLeauge(leauge);
         }}
       >

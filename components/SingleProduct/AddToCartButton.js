@@ -15,8 +15,6 @@ const AddToCartButton = ({
 
   const currentUser = useAuth();
 
-  console.log(productSize);
-
   //ADD-REMOVE ITEM CART
   const addToCart = () => {
     // // ? IF SIZE IS NOT SELECTED FORCE USER TO SELECT ONE //
