@@ -3,7 +3,6 @@ import { updateItemSize, useAuth } from "../../firebase/firebaseConfig";
 
 const ShoppingCartChangeSize = ({ item, setShowChangeSize }) => {
   //set item's size
-
   const sizes = [
     "XS (34-36)",
     "S  (36-38)",

@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useFetchData } from "../../../firebase/firebaseConfig";
 
 const ShoppingCart = () => {
+  const { fetchedData } = useFetchData("shopping-cart");
+
   return (
     <Link href="/shopping-cart">
       <div className="relative cursor-pointer">
@@ -19,7 +22,7 @@ const ShoppingCart = () => {
           />
         </svg>
         <span className="w-6 h-6 rounded-full bg-orange-400 absolute -top-2 left-3 text-center text-white font-bold">
-          0
+          {(fetchedData && fetchedData?.length) || 0}
         </span>
       </div>
     </Link>

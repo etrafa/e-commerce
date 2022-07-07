@@ -1,10 +1,18 @@
+//nextJS
 import Link from "next/link";
-import ShoppingCartTable from "./ShoppingCartTable";
-import { useFetchData } from "../../firebase/firebaseConfig";
 import { useState } from "react";
+
+//components
+import ShoppingCartTable from "./ShoppingCartTable";
+import OrderSummary from "./OrderSummary";
+
+//firebase functions
+import { useFetchData } from "../../firebase/firebaseConfig";
 
 const ShoppingCart = () => {
   const { fetchedData } = useFetchData("shopping-cart");
+
+  let cartAmount = [];
   const [totalAmount, setTotalAmount] = useState([]);
 
   return (
@@ -24,6 +32,7 @@ const ShoppingCart = () => {
       ) : (
         <div>
           <ShoppingCartTable />
+          <OrderSummary />
         </div>
       )}
     </div>
