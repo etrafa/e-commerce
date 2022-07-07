@@ -1,7 +1,11 @@
+//components
 import ShoppingCartTableBody from "./ShoppingCartTableBody";
+import OrderSummaryForMobile from "./OrderSummaryForMobile";
+
+//firebase function
 import { useFetchData } from "../../firebase/firebaseConfig";
 
-const ShoppingCartTable = () => {
+const ShoppingCartTable = ({ subTotal, shippingAmount }) => {
   const { fetchedData } = useFetchData("shopping-cart");
 
   return (
@@ -27,6 +31,10 @@ const ShoppingCartTable = () => {
             />
           ))}
       </table>
+      <OrderSummaryForMobile
+        subTotal={subTotal}
+        shippingAmount={shippingAmount}
+      />
     </div>
   );
 };

@@ -45,7 +45,7 @@ const ShoppingCartTableBody = ({ item, leauge }) => {
             {item?.tshirtName}
           </td>
         </Link>
-        <td className="px-6 my-4">
+        <td className="px-4 my-4">
           {item?.productSize}
           <button
             onClick={changeSizeHandler}
