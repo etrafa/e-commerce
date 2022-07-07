@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
   const [productLeuage, setProductLeauge] = useState("");
 
   // SHOPPING CART TRACKER
-  const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
   //USER REGISTER INFORMATION
   const [registerNewUser, setRegisterNewUser] = useState({
@@ -52,11 +51,8 @@ function MyApp({ Component, pageProps }) {
         value={{
           currency,
           setCurrency,
-
           productLeuage,
           setProductLeauge,
-          shoppingCartItems,
-          setShoppingCartItems,
           registerNewUser,
           setRegisterNewUser,
           signUpErrorModal,

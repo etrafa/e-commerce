@@ -8,6 +8,7 @@ import {
   onSnapshot,
   query,
   setDoc,
+  updateDoc,
 } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
@@ -182,4 +183,21 @@ export const useFetchData = (url) => {
     getData();
   }, [currentUser]);
   return { fetchedData };
+};
+
+//update item's size
+export const updateItemSize = async (props, user, size) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async () => {
+    await setDoc(doc(db, `users/${user?.uid}/shopping-cart`, props.uid), {
+      ...props,
+      productSize: size,
+    });
+  });
 };

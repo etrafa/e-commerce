@@ -7,7 +7,6 @@ import { logOut, useAuth } from "../../../firebase/firebaseConfig";
 const UserAccount = () => {
   const currentUser = useAuth();
 
-  const router = useRouter();
   return (
     <div className="flex items-center cursor-pointer relative group">
       <svg
@@ -42,15 +41,15 @@ const UserAccount = () => {
         <ul className="mt-2 text-border">
           <li className="border-2 border-hoverText"></li>
           <Link href="/my-account">
-            <li className="h-8 mt-1 hover:text-hoverText">My Account</li>
+            <li className="h-8 mt-1 hover:text-hoverText pl-4">My Account</li>
           </Link>
           <hr />
           <Link href="/my-wishlist">
-            <li className="h-8 mt-2 hover:text-hoverText">My Wishlist</li>
+            <li className="h-8 mt-2 hover:text-hoverText pl-4">My Wishlist</li>
           </Link>
           <hr />
           <Link href="/shopping-cart">
-            <li className="h-8 mt-2 hover:text-hoverText">My Cart</li>
+            <li className="h-8 mt-2 hover:text-hoverText pl-4">My Cart</li>
           </Link>
           <hr />
           {/* //? IF USER HASN'T SIGNED UP YET SHOW LOG IN OTHERWISE SHOW SIGN OUT */}
@@ -58,7 +57,7 @@ const UserAccount = () => {
             <Link href="/create-account">
               <li
                 onClick={() => logOut()}
-                className="h-8 mt-2 hover:text-hoverText"
+                className="h-8 mt-2 hover:text-hoverText pl-4"
               >
                 Log out
               </li>

@@ -1,10 +1,6 @@
 import Link from "next/link";
-import { useContext } from "react";
-import { CurrencyContext } from "../../../Context/CurrencyContext";
 
 const ShoppingCart = () => {
-  const { shoppingCartItems } = useContext(CurrencyContext);
-
   return (
     <Link href="/shopping-cart">
       <div className="relative cursor-pointer">
@@ -22,9 +18,8 @@ const ShoppingCart = () => {
             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
           />
         </svg>
-
         <span className="w-6 h-6 rounded-full bg-orange-400 absolute -top-2 left-3 text-center text-white font-bold">
-          {shoppingCartItems.length}
+          0
         </span>
       </div>
     </Link>

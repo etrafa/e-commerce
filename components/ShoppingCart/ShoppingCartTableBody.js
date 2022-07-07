@@ -1,18 +1,36 @@
-import Link from "next/link";
+//context
 import { useContext } from "react";
 import { CurrencyContext } from "../../Context/CurrencyContext";
-import { removeItemFromWishList } from "../../firebase/firebaseConfig";
 
-const WishListTableBody = ({ item, leauge }) => {
+//nextJS
+import Link from "next/link";
+
+//firebase function
+import { removeItemFromCart } from "../../firebase/firebaseConfig";
+
+//components
+import ShoppingCartChangeSize from "./ShoppingCartChangeSize";
+import { useState } from "react";
+
+const ShoppingCartTableBody = ({ item, leauge }) => {
   const { currency, setProductLeauge } = useContext(CurrencyContext);
+
+  //show change size component on the UI when user click the change button
+  const [showChangeSize, setShowChangeSize] = useState(false);
+
+  const changeSizeHandler = () => {
+    setShowChangeSize(!showChangeSize);
+  };
 
   return (
     <tbody>
       <tr className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
         <Link href={"/products/" + item?.uid}>
-          <th className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+          <th className="md:px-6 md:py-4 w-full md:w-auto">
             <img
-              onClick={() => setProductLeauge(leauge)}
+              onClick={() => {
+                setProductLeauge(leauge);
+              }}
               className="cursor-pointer hover:opacity-60"
               src={item?.frontSmall}
               alt={item?.tshirtName}
@@ -27,6 +45,21 @@ const WishListTableBody = ({ item, leauge }) => {
             {item?.tshirtName}
           </td>
         </Link>
+        <td className="px-6 my-4">
+          {item?.productSize}
+          <button
+            onClick={changeSizeHandler}
+            className="mt-2 underline block hover:text-gray-400 tracking-wide"
+          >
+            Change
+          </button>
+          {showChangeSize && (
+            <ShoppingCartChangeSize
+              item={item}
+              setShowChangeSize={setShowChangeSize}
+            />
+          )}
+        </td>
         <td className="px-6 py-4">
           {currency === "USD" && <p>${item?.price.toFixed(2)}</p>}
           {currency === "EUR" && <p>{item?.price * 0.95}€</p>}
@@ -34,8 +67,8 @@ const WishListTableBody = ({ item, leauge }) => {
         </td>
         <td className="px-6 py-4">
           <svg
-            //remove item from wishlist database
-            onClick={() => removeItemFromWishList(item)}
+            //remove item from cart
+            onClick={() => removeItemFromCart(item)}
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 cursor-pointer hover:stroke-gray-400"
             fill="none"
@@ -55,4 +88,4 @@ const WishListTableBody = ({ item, leauge }) => {
   );
 };
 
-export default WishListTableBody;
+export default ShoppingCartTableBody;
