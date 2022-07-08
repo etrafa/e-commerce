@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { countryList } from "../components/MyAccount/MyAddress/dropdowncountries";
 import { addAddressToDB, useAuth } from "../firebase/firebaseConfig";
+import Link from "next/link";
 
 const addnewaddress = () => {
   const [newAddress, setNewAddress] = useState({
@@ -62,6 +63,11 @@ const addnewaddress = () => {
         ADD NEW ADDRESS
       </h1>
       <div className="border-dotted border-2 px-8 mt-4 py-4 w-11/12 mx-auto md:w-8/12 lg:w-6/12 max-w-screen-xl">
+        <Link href="/my-address">
+          <span className="underline text-blue-500 cursor-pointer hover:text-blue-400">
+            &lt; My Address
+          </span>
+        </Link>
         <form className="flex flex-col max-w-screen-lg justify-center items-center gap-y-5 mt-8">
           <label className="block text-sm font-medium text-gray-700 w-full lg:w-6/12">
             Address Title <span className="text-strongRed">*</span>

@@ -220,3 +220,17 @@ export const addAddressToDB = async (props, user) => {
     });
   });
 };
+
+//delete user's address from DB
+export const deleteAddressFromDB = async (props) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async (v) => {
+    await deleteDoc(doc(db, `users/${v.id}/addresses`, props?.id));
+  });
+};
