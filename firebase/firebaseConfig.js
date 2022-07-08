@@ -18,6 +18,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updatePassword,
   updateProfile,
 } from "firebase/auth";
 import { useState } from "react";
@@ -169,7 +170,9 @@ export const useFetchData = (url) => {
       }));
 
       data.map(async () => {
-        const likesQ = query(collection(db, `users/${currentUser.uid}/${url}`));
+        const likesQ = query(
+          collection(db, `users/${currentUser?.uid}/${url}`)
+        );
         const unsub = onSnapshot(likesQ, (snapshot) => {
           let result = [];
           snapshot.docs.forEach((doc) => {
@@ -198,6 +201,22 @@ export const updateItemSize = async (props, user, size) => {
     await setDoc(doc(db, `users/${user?.uid}/shopping-cart`, props.uid), {
       ...props,
       productSize: size,
+    });
+  });
+};
+
+//add address to user's database
+export const addAddressToDB = async (props, user) => {
+  const q = query(collection(db, "users"));
+  const querySnapShot = await getDocs(q);
+  const queryData = querySnapShot.docs.map((detail) => ({
+    ...detail.data(),
+    id: detail.id,
+  }));
+
+  queryData.map(async () => {
+    await setDoc(doc(db, `users/${user?.uid}/addresses`, props.id), {
+      ...props,
     });
   });
 };

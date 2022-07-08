@@ -30,7 +30,9 @@ const login = () => {
   return (
     <div className="mt-6">
       {currentUser ? (
-        <MyAccount />
+        <div className="grid">
+          <MyAccount />
+        </div>
       ) : (
         <div>
           <h1 className="text-border text-2xl font-bold text-center">LOGIN</h1>

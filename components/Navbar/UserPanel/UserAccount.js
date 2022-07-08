@@ -64,7 +64,7 @@ const UserAccount = () => {
             </Link>
           ) : (
             <Link href="/login">
-              <li className="h-8 mt-2 hover:text-hoverText">Log in</li>
+              <li className="h-8 mt-2 hover:text-hoverText pl-4">Log in</li>
             </Link>
           )}
           <hr />

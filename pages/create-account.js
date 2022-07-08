@@ -50,7 +50,9 @@ const createaccount = () => {
   return (
     <div className="mt-6 relative">
       {currentUser ? (
-        <MyAccount />
+        <div className="grid">
+          <MyAccount />
+        </div>
       ) : (
         <div>
           <SignUpError />
