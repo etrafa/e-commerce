@@ -14,6 +14,7 @@ module.exports = {
         strongRed: "#ff0000",
         tableGray: "#EFEFEF",
         borderRed: "#B32B2B",
+        checkoutBlue: "#0084ff",
       },
       display: ["group-hover"],
       keyframes: {

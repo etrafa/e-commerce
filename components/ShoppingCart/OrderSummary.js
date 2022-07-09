@@ -2,6 +2,7 @@
 import { CurrencyContext } from "../../Context/CurrencyContext";
 
 import { useContext } from "react";
+import Link from "next/link";
 
 const OrderSummary = ({ subTotal, shippingAmount }) => {
   const { currency } = useContext(CurrencyContext);
@@ -41,9 +42,11 @@ const OrderSummary = ({ subTotal, shippingAmount }) => {
           <span className="font-bold">{subTotal + shippingAmount}£</span>
         )}
       </div>
-      <button className="bg-black w-44 h-12 mx-auto block text-white text-center font-bold tracking-widest rounded-lg my-12 hover:bg-gray-800">
-        Buy
-      </button>
+      <Link href="/checkout">
+        <button className="bg-black w-44 h-12 mx-auto block text-white text-center font-bold tracking-widest rounded-lg my-12 hover:bg-gray-800">
+          Checkout
+        </button>
+      </Link>
     </div>
   );
 };
