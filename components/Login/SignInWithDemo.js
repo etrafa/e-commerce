@@ -1,8 +1,12 @@
 import React from "react";
+import { signInWithEmail } from "../../firebase/firebaseConfig";
 
 const SignInWithDemo = () => {
   return (
-    <button className="border-2 flex w-11/12 lg:w-full h-12 items-center justify-center mx-auto mt-4 hover:bg-slate-100">
+    <button
+      onClick={() => signInWithEmail("demoaccount@gmail.com", 123456789)}
+      className="border-2 flex w-11/12 lg:w-full h-12 items-center justify-center mx-auto mt-4 hover:bg-slate-100"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
